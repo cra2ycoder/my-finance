@@ -26,7 +26,7 @@ function NotificationBadge() {
 
 function MenuIcon(props: any = {}) {
   return (
-    <Box sx={{ display: 'flex', mr: 1 }}>
+    <Box sx={{ display: 'flex', mr: 1, pl: 2, pr: 2 }}>
       {props.iconComponent || <></>}
       <Typography sx={{ color: 'white', marginLeft: 1 }}>
         {props.title || ''}
@@ -43,6 +43,10 @@ function Header() {
         width: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
+        backgroundColor: 'secondary.dark',
+        height: 64,
+        p: 2,
+        boxSizing: 'border-box',
       }}
     >
       <Box display="flex" alignItems="center">
