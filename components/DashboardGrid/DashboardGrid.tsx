@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance'
@@ -8,41 +9,46 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 
 function DashboardGridItem(props: any) {
   return (
-    <Box
-      sx={{
-        backgroundColor: '#f0f0f0',
-        textAlign: 'center',
-        padding: '20%',
-      }}
-    >
-      {props.icon}
-      <Typography sx={{ color: '#235ad1', fontSize: '3.5vh', fontWeight: 100 }}>
-        {props.title || 'Title'}
-      </Typography>
-      <Typography
+    <Link href={props.link}>
+      <Box
         sx={{
-          color: '#666666',
-          fontWeight: 100,
-          fontSize: '1.8vh',
-          wordBreak: 'break-word',
+          backgroundColor: '#f0f0f0',
+          textAlign: 'center',
+          padding: '20%',
         }}
       >
-        {props.desc || 'desc goes here!'}
-      </Typography>
-    </Box>
+        {props.icon}
+        <Typography
+          sx={{ color: '#235ad1', fontSize: '3.5vh', fontWeight: 100 }}
+        >
+          {props.title || 'Title'}
+        </Typography>
+        <Typography
+          sx={{
+            color: '#666666',
+            fontWeight: 100,
+            fontSize: '1.8vh',
+            wordBreak: 'break-word',
+          }}
+        >
+          {props.desc || 'desc goes here!'}
+        </Typography>
+      </Box>
+    </Link>
   )
 }
 
 function DashboardGrid(props: any) {
   const list = [
     {
-      title: 'Monthly Expences',
+      title: 'Monthly Expenses',
       desc: 'commitments/unplanned/savings/pending',
       icon: (
         <AccountBalanceWalletIcon
           sx={{ width: 50, height: 50, fill: '#707b8b' }}
         />
       ),
+      link: '/monthly-expenses',
     },
     {
       title: 'Investments',
@@ -50,11 +56,13 @@ function DashboardGrid(props: any) {
       icon: (
         <CurrencyExchangeIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />
       ),
+      link: '/investments',
     },
     {
       title: 'Gold Savings',
       desc: 'Total golds/gold chit',
       icon: <DiamondIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />,
+      link: '/gold-savings',
     },
     {
       title: 'Loans',
@@ -62,6 +70,7 @@ function DashboardGrid(props: any) {
       icon: (
         <AccountBalanceIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />
       ),
+      link: '/loans',
     },
   ]
 
