@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
+import Drawer from '@mui/material/Drawer'
+// import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
@@ -30,50 +32,80 @@ function HeaderMenuIcon(props: any = {}) {
     <Box
       sx={{ display: 'flex', mr: 1, pl: 2, pr: 2 }}
       className={`menu-icon-${props?.title?.toLowerCase()}`}
+      onClick={props?.onClick}
     >
       {props.iconComponent || <></>}
-      <Typography sx={{ color: 'white', marginLeft: 1 }}>
+      <Typography sx={{ color: props?.color || 'black', marginLeft: 1 }}>
         {props.title || ''}
       </Typography>
     </Box>
   )
 }
 
-function Header() {
+function MenuList(props = {}) {
   return (
-    <Box
-      className="header-parent"
-      sx={{
-        display: 'flex',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: 'secondary.dark',
-        height: 64,
-        p: 2,
-        boxSizing: 'border-box',
-      }}
-    >
-      <Box display="flex" alignItems="center">
-        <HeaderMenuIcon
-          iconComponent={<MenuIcon sx={{ fill: 'white' }} />}
-          title="Menu"
-        />
-        <Typography sx={{ color: 'white', mr: 4 }}>My Finance</Typography>
-        <HeaderMenuIcon
-          iconComponent={<DashboardIcon sx={{ fill: 'white' }} />}
-          title="Dashboard"
-        />
-        <HeaderMenuIcon
-          iconComponent={<AccountBalanceWalletIcon sx={{ fill: 'white' }} />}
-          title="Wallet"
-        />
+    <>
+      <HeaderMenuIcon
+        iconComponent={<DashboardIcon sx={{ fill: props?.color || 'black' }} />}
+        title="Dashboard"
+        color={props.color}
+      />
+      <HeaderMenuIcon
+        iconComponent={
+          <AccountBalanceWalletIcon sx={{ fill: props?.color || 'black' }} />
+        }
+        title="Wallet"
+        color={props.color}
+      />
+    </>
+  )
+}
+
+function Header() {
+  const [drawerState, setDrawerState] = useState(false)
+  return (
+    <>
+      <Box
+        className="header-parent"
+        sx={{
+          display: 'flex',
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          backgroundColor: 'secondary.dark',
+          height: 64,
+          p: 2,
+          boxSizing: 'border-box',
+        }}
+      >
+        <Box display="flex" alignItems="center">
+          <HeaderMenuIcon
+            iconComponent={<MenuIcon sx={{ fill: 'white' }} />}
+            title="Menu"
+            onClick={() => {
+              setDrawerState(true)
+            }}
+          />
+          <Typography sx={{ color: 'white', mr: 4 }}>My Finance</Typography>
+          <MenuList color="white" />
+        </Box>
+        <Box display="flex" alignItems="center">
+          <NotificationBadge />
+          <LetterAvatars />
+        </Box>
       </Box>
-      <Box display="flex" alignItems="center">
-        <NotificationBadge />
-        <LetterAvatars />
-      </Box>
-    </Box>
+      <Drawer
+        className="header-drawer-parent"
+        sx={{ width: '300px' }}
+        anchor="left"
+        open={drawerState}
+        onClose={() => {
+          setDrawerState(!drawerState)
+        }}
+      >
+        <MenuList />
+      </Drawer>
+    </>
   )
 }
 

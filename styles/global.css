@@ -19,9 +19,27 @@ body {
   font-size: 0;
 }
 
+.menu-icon-menu {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .menu-icon-dashboard,
-  .menu-icon-wallet {
+  .header-parent .menu-icon-dashboard,
+  .header-parent .menu-icon-wallet {
     display: none;
   }
+
+  .menu-icon-menu {
+    display: block;
+  }
+}
+
+.header-drawer-parent .MuiDrawer-paper {
+  width: 300px;
+}
+
+.header-drawer-parent .menu-icon-dashboard,
+.header-drawer-parent .menu-icon-wallet {
+  height: 50px;
+  align-items: center;
 }
