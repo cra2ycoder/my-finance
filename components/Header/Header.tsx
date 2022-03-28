@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
+import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
 import Drawer from '@mui/material/Drawer'
-// import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
@@ -29,16 +29,18 @@ function NotificationBadge() {
 
 function HeaderMenuIcon(props: any = {}) {
   return (
-    <Box
-      sx={{ display: 'flex', mr: 1, pl: 2, pr: 2 }}
-      className={`menu-icon-${props?.title?.toLowerCase()}`}
-      onClick={props?.onClick}
-    >
-      {props.iconComponent || <></>}
-      <Typography sx={{ color: props?.color || 'black', marginLeft: 1 }}>
-        {props.title || ''}
-      </Typography>
-    </Box>
+    <Link href={props.link}>
+      <Box
+        sx={{ display: 'flex', mr: 1, pl: 2, pr: 2 }}
+        className={`menu-icon-${props?.title?.toLowerCase()}`}
+        onClick={props?.onClick}
+      >
+        {props.iconComponent || <></>}
+        <Typography sx={{ color: props?.color || 'black', marginLeft: 1 }}>
+          {props.title || ''}
+        </Typography>
+      </Box>
+    </Link>
   )
 }
 
@@ -49,6 +51,7 @@ function MenuList(props = {}) {
         iconComponent={<DashboardIcon sx={{ fill: props?.color || 'black' }} />}
         title="Dashboard"
         color={props.color}
+        link="/dashboard"
       />
       <HeaderMenuIcon
         iconComponent={
@@ -56,6 +59,7 @@ function MenuList(props = {}) {
         }
         title="Wallet"
         color={props.color}
+        link="/wallet"
       />
     </>
   )
@@ -63,6 +67,7 @@ function MenuList(props = {}) {
 
 function Header() {
   const [drawerState, setDrawerState] = useState(false)
+
   return (
     <>
       <Box
