@@ -9,21 +9,22 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 function DashboardGridItem(props: any) {
   return (
     <Box
-      // gridColumn={'span 2'}
       sx={{
         backgroundColor: '#f0f0f0',
         textAlign: 'center',
-        padding: '5rem',
+        padding: '20%',
       }}
     >
       {props.icon}
-      <Typography sx={{ color: '#235ad1', fontSize: '2rem', fontWeight: 100 }}>
+      <Typography sx={{ color: '#235ad1', fontSize: '3.5vh', fontWeight: 100 }}>
         {props.title || 'Title'}
       </Typography>
       <Typography
         sx={{
           color: '#666666',
           fontWeight: 100,
+          fontSize: '1.8vh',
+          wordBreak: 'break-word',
         }}
       >
         {props.desc || 'desc goes here!'}
@@ -65,7 +66,7 @@ function DashboardGrid(props: any) {
   ]
 
   return (
-    <Box display="grid" gridTemplateColumns="repeat(2, 1fr)" gap={2}>
+    <Box display="grid" gap={2} className="dashboard-grids-container">
       {list.map((x, idx) => (
         <DashboardGridItem {...x} key={`grid-item-${idx}`} />
       ))}
