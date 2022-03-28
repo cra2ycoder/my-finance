@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import MenuIcon from '@mui/icons-material/Menu'
 
 function LetterAvatars() {
   return (
@@ -24,9 +25,12 @@ function NotificationBadge() {
   )
 }
 
-function MenuIcon(props: any = {}) {
+function HeaderMenuIcon(props: any = {}) {
   return (
-    <Box sx={{ display: 'flex', mr: 1, pl: 2, pr: 2 }}>
+    <Box
+      sx={{ display: 'flex', mr: 1, pl: 2, pr: 2 }}
+      className={`menu-icon-${props?.title?.toLowerCase()}`}
+    >
       {props.iconComponent || <></>}
       <Typography sx={{ color: 'white', marginLeft: 1 }}>
         {props.title || ''}
@@ -38,6 +42,7 @@ function MenuIcon(props: any = {}) {
 function Header() {
   return (
     <Box
+      className="header-parent"
       sx={{
         display: 'flex',
         width: '100%',
@@ -50,12 +55,16 @@ function Header() {
       }}
     >
       <Box display="flex" alignItems="center">
+        <HeaderMenuIcon
+          iconComponent={<MenuIcon sx={{ fill: 'white' }} />}
+          title="Menu"
+        />
         <Typography sx={{ color: 'white', mr: 4 }}>My Finance</Typography>
-        <MenuIcon
+        <HeaderMenuIcon
           iconComponent={<DashboardIcon sx={{ fill: 'white' }} />}
           title="Dashboard"
         />
-        <MenuIcon
+        <HeaderMenuIcon
           iconComponent={<AccountBalanceWalletIcon sx={{ fill: 'white' }} />}
           title="Wallet"
         />
