@@ -6,10 +6,9 @@ import { dashboardItems } from '@model/config/data'
 
 function DashboardGridItem(props: any) {
   return (
-    <Link href={props.link}>
+    <Link href={props.link} sx={{ backgroundColor: '#f0f0f0' }}>
       <Box
         sx={{
-          backgroundColor: '#f0f0f0',
           textAlign: 'center',
           padding: '20%',
         }}
