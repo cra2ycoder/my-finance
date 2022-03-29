@@ -29,7 +29,7 @@ function WalletTable(props = {}) {
   }
 
   return (
-    <TableContainer>
+    <TableContainer sx={{ marginTop: '2rem' }}>
       <Table
         sx={{ minWidth: 700 }}
         aria-label="customized table"
@@ -44,8 +44,8 @@ function WalletTable(props = {}) {
         </TableHead>
         <TableBody>
           {props?.list?.map((x, idx) => (
-            <>
-              <TableRow key={`wallet-table-row-${type || 'parent'}-${idx}`}>
+            <React.Fragment key={`wallet-table-row-${type || 'parent'}-${idx}`}>
+              <TableRow>
                 <TableCell>
                   {x?.groups && x?.groups?.length > 0 && (
                     <IconButton
@@ -86,7 +86,7 @@ function WalletTable(props = {}) {
                   </TableCell>
                 </TableRow>
               )}
-            </>
+            </React.Fragment>
           ))}
         </TableBody>
       </Table>
