@@ -43,3 +43,13 @@ body {
   height: 50px;
   align-items: center;
 }
+
+.months-grids-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .months-grids-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
