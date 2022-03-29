@@ -17,7 +17,7 @@ function DashboardGridItem(props: any) {
         <Typography
           sx={{ color: '#235ad1', fontSize: '3.5vh', fontWeight: 100 }}
         >
-          {props.title || 'Title'}
+          {props.name || 'Title'}
         </Typography>
         <Typography
           sx={{
