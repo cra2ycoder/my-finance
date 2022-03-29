@@ -4,67 +4,66 @@ import DiamondIcon from '@mui/icons-material/Diamond'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 
 const walletItems = [
-  { title: 'A/C Balance (before salary credit)', value: 0 },
-  { title: 'Salary (take home)', value: 0 },
-  { title: 'Salary Bonus', value: 0 },
+  { name: 'A/C Balance (before salary credit)', value: 0 },
+  { name: 'Salary (take home)', value: 0 },
+  { name: 'Salary Bonus', value: 0 },
   {
-    title: 'Returns',
+    name: 'Returns',
     value: 0,
     groups: [
-      { title: 'MF Returns: HDFC (4.58L)', value: 0 },
-      { title: 'MF Returns: ABSL (6.69L)', value: 0 },
-      { title: 'MF Returns: ABSL (1L)', value: 0 },
-      { title: 'MF Returns: ICICI (1.29L)', value: 0 },
-      { title: 'MF Returns: DSP (1.5L)', value: 0 },
-      { title: 'Infy Returns', value: 0 },
-      { title: 'Tax Returns', value: 0 },
+      { name: 'MF Returns: HDFC (4.58L)', value: 0 },
+      { name: 'MF Returns: ABSL (6.69L)', value: 0 },
+      { name: 'MF Returns: ABSL (1L)', value: 0 },
+      { name: 'MF Returns: ICICI (1.29L)', value: 0 },
+      { name: 'MF Returns: DSP (1.5L)', value: 0 },
+      { name: 'Infy Returns', value: 0 },
+      { name: 'Tax Returns', value: 0 },
     ],
   },
   {
-    title: 'Interests Received',
+    name: 'Interests Received',
     value: 0,
     groups: [
-      { title: 'FD Interest', value: 0 },
-      { title: 'Bank Interests (for our a/c balance maintanance)', value: 0 },
-      { title: 'Cashback (Fuel)', value: 0 },
-      { title: 'PF Interest', value: 0 },
+      { name: 'FD Interest', value: 0 },
+      { name: 'Bank Interests (for our a/c balance maintanance)', value: 0 },
+      { name: 'Cashback (Fuel)', value: 0 },
+      { name: 'PF Interest', value: 0 },
     ],
   },
   {
-    title: 'Redemption',
+    name: 'Redemption',
     value: 0,
     groups: [
-      { title: 'Axis Direct Redemption', value: 0 },
-      { title: 'MF Redemption', value: 0 },
-      { title: 'Bitcoin Redemption', value: 0 },
-      { title: 'Stocks Redemption', value: 0 },
+      { name: 'Axis Direct Redemption', value: 0 },
+      { name: 'MF Redemption', value: 0 },
+      { name: 'Bitcoin Redemption', value: 0 },
+      { name: 'Stocks Redemption', value: 0 },
     ],
   },
   {
-    title: 'As Cash in personal wallet',
+    name: 'As Cash in personal wallet',
     value: 0,
   },
   {
-    title:
-      'Other Income (any amount that you received from your family members)',
+    name: 'Other Income (any amount that you received from your family members)',
     value: 0,
-    groups: [{ title: 'XXXX', value: 0 }],
+    groups: [{ name: 'XXXX', value: 0 }],
   },
   {
-    title: 'Personal Loan from Friends/Family Members',
+    name: 'Personal Loan from Friends/Family Members',
     value: 0,
-    groups: [{ title: 'XXXX', value: 0 }],
+    groups: [{ name: 'XXXX', value: 0 }],
   },
   {
-    title: 'Loan paid back (your loan amount returned by the person(s))',
+    name: 'Loan paid back (your loan amount returned by the person(s))',
     value: 0,
-    groups: [{ title: 'XXXX', value: 0 }],
+    groups: [{ name: 'XXXX', value: 0 }],
   },
 ]
 
 const dashboardItems = [
   {
-    title: 'Monthly Expenses',
+    name: 'Monthly Expenses',
     desc: 'commitments/unplanned/savings/pending',
     icon: (
       <AccountBalanceWalletIcon
@@ -74,7 +73,7 @@ const dashboardItems = [
     link: '/monthly-expenses',
   },
   {
-    title: 'Investments',
+    name: 'Investments',
     desc: 'Overall mutual funds/stocks/returns/SIP',
     icon: (
       <CurrencyExchangeIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />
@@ -82,13 +81,13 @@ const dashboardItems = [
     link: '/investments',
   },
   {
-    title: 'Gold Savings',
+    name: 'Gold Savings',
     desc: 'Total golds/gold chit',
     icon: <DiamondIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />,
     link: '/gold-savings',
   },
   {
-    title: 'Loans',
+    name: 'Loans',
     desc: 'Personal/Plot/Home/Gold loans and EMIs',
     icon: (
       <AccountBalanceIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />
@@ -112,4 +111,46 @@ const months = [
   'DEC',
 ]
 
-export { walletItems, dashboardItems, months }
+const goldItems = [
+  {
+    name: 'Gold Savings',
+    value: 0,
+    groups: [
+      {
+        name: 'Mens Chains',
+        grams: 16,
+        value: 0,
+        belongsTo: 'mohaa',
+        at: 'home',
+      },
+      {
+        name: 'Necklace',
+        grams: 42,
+        value: 0,
+        belongsTo: 'wife',
+        at: 'bank',
+      },
+      {
+        name: 'Simple thread chain',
+        grams: 16,
+        value: 0,
+        belongsTo: 'jo',
+        at: 'home',
+      },
+      {
+        name: 'Bangles',
+        grams: 16,
+        value: 0,
+        belongsTo: 'jo',
+        at: 'home',
+      },
+    ],
+  },
+  {
+    name: 'Gold Chits',
+    value: 0,
+    groups: [{ name: 'GRT Jewelers', value: 0, installment: 10000 }],
+  },
+]
+
+export { walletItems, dashboardItems, months, goldItems }
