@@ -13,7 +13,6 @@ function Golds() {
             sx={{
               color: '#235ad1',
               fontSize: '2.5vh',
-              fontWeight: 100,
               margin: '2rem 0',
             }}
           >
@@ -24,7 +23,6 @@ function Golds() {
             sx={{
               color: '#235ad1',
               fontSize: '2.5vh',
-              fontWeight: 100,
               margin: '2rem 0',
             }}
           >
