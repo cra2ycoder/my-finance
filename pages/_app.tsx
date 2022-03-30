@@ -39,7 +39,7 @@ export default function MyApp({ Component, pageProps }) {
             <Typography
               sx={{
                 fontSize: '4.5vh',
-                fontWeight: 800,
+                fontWeight: 700,
                 color: 'rgb(19, 47, 76)',
               }}
             >

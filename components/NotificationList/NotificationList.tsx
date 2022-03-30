@@ -14,7 +14,7 @@ function FilterList(props: any) {
       <Typography
         sx={{
           fontSize: '4.5vh',
-          fontWeight: 800,
+          fontWeight: 700,
           color: type,
         }}
       >
