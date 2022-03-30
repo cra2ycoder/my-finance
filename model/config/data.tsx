@@ -2,7 +2,27 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance'
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange'
 import DiamondIcon from '@mui/icons-material/Diamond'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
+import FlagIcon from '@mui/icons-material/Flag'
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 
+const pageItems = {
+  home: {
+    title: '',
+    desc: '',
+  },
+  golds: {
+    title: 'Golds',
+    desc: 'Save Gold. Save Family. Save Future.',
+  },
+  dashboard: {
+    title: 'Dashboard',
+    desc: 'Financial Management(s). ',
+  },
+  wallet: {
+    title: 'Wallet',
+    desc: 'Total income details. Earn, Save and Spend.',
+  },
+}
 const walletItems = [
   { name: 'Savings A/C Balance', value: 0, info: 'before salary credit' },
   {
@@ -102,6 +122,22 @@ const dashboardItems = [
     ),
     link: '/loans',
   },
+  {
+    name: 'Goals',
+    desc: 'Current year goal!',
+    icon: <FlagIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />,
+    link: '/goals',
+  },
+  {
+    name: 'Notifications',
+    desc: 'Upcoming...',
+    icon: (
+      <NotificationsActiveIcon
+        sx={{ width: 50, height: 50, fill: '#707b8b' }}
+      />
+    ),
+    link: '/notifications',
+  },
 ]
 
 const months = [
@@ -161,4 +197,4 @@ const goldItems = [
   },
 ]
 
-export { walletItems, dashboardItems, months, goldItems }
+export { walletItems, dashboardItems, months, goldItems, pageItems }
