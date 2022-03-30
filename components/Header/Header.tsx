@@ -74,7 +74,8 @@ function Header() {
       <Box
         className={`${styles['header-parent']} header-parent`}
         sx={{
-          backgroundColor: 'secondary.dark',
+          background:
+            'linear-gradient(-90deg, rgb(0, 89, 178), rgb(0, 127, 255) 120%)',
         }}
       >
         <Box display="flex" alignItems="center">
