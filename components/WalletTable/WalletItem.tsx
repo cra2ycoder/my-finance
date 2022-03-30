@@ -6,7 +6,6 @@ import IconButton from '@mui/material/IconButton'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import Button from '@mui/material/Button'
-import EditRoundedIcon from '@mui/icons-material/EditRounded'
 import WalletTable from './WalletTable'
 import { IWalletItemProps } from './typings'
 
@@ -56,13 +55,12 @@ function WalletItem(props: IWalletItemProps) {
           width="100%"
           alignItems="center"
         >
-          <Typography sx={{ color: '#235ad1', fontWeight: 100 }}>
+          <Typography sx={{ color: '#235ad1' }}>
             {name}
             <Typography
               sx={{
                 color: '#727272',
                 fontSize: '0.8rem',
-                fontWeight: 100,
               }}
             >
               {info}
@@ -71,14 +69,16 @@ function WalletItem(props: IWalletItemProps) {
           <Typography
             sx={{
               color: '#404040',
-              fontWeight: 100,
             }}
           >
             <span style={{ marginRight: '1rem', fontSize: '1rem' }}>
               Rs. {value || defaultValue}.00
             </span>
             {enableEdit === true && (
-              <Button variant="outlined" sx={{ padding: 0 }}>
+              <Button
+                variant="outlined"
+                sx={{ padding: 0, marginLeft: '1rem' }}
+              >
                 edit
               </Button>
             )}
