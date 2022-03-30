@@ -22,6 +22,10 @@ const pageItems = {
     title: 'Wallet',
     desc: 'Total income details. Earn, Save and Spend.',
   },
+  notifications: {
+    title: 'Notifications',
+    desc: 'Keep watching. Be Alert. Ensure everything.',
+  },
 }
 const walletItems = [
   { name: 'Savings A/C Balance', value: 0, info: 'before salary credit' },
@@ -197,4 +201,47 @@ const goldItems = [
   },
 ]
 
-export { walletItems, dashboardItems, months, goldItems, pageItems }
+const notificationList = [
+  {
+    title: 'Interest will be credited!',
+    desc: 'HDFC mutual funds interest will be paid on or before 15th of this month. And, the expected amount is between Rs. 2000 - Rs. 4000',
+    alertZone: 'red', // orange, green, yellow
+    commitment: 'monthly',
+    on: 'every-month-30',
+    type: 'credit', // 'debit'
+    category: 'loan', //sip, returns, redemption, interest
+  },
+  {
+    title: 'Interest will be credited!',
+    alertZone: 'red', // orange, green, yellow
+    commitment: 'monthly',
+    on: 'every-month-30',
+    type: 'credit', // 'debit'
+    category: 'loan', //sip, returns, redemption, interest
+  },
+  {
+    title: 'Interest will be credited!',
+    alertZone: 'red', // orange, green, yellow
+    commitment: 'monthly',
+    on: 'every-month-30',
+    type: 'credit', // 'debit'
+    category: 'loan', //sip, returns, redemption, interest
+  },
+  {
+    title: 'Interest will be credited!',
+    alertZone: 'red', // orange, green, yellow
+    commitment: 'monthly',
+    on: 'every-month-30',
+    type: 'credit', // 'debit'
+    category: 'loan', //sip, returns, redemption, interest
+  },
+]
+
+export {
+  walletItems,
+  dashboardItems,
+  months,
+  goldItems,
+  pageItems,
+  notificationList,
+}
