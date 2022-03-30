@@ -1,9 +1,16 @@
 import React from 'react'
+import Box from '@mui/material/Box'
 import WalletItem from './WalletItem'
+import { IWalletTableProps, IWalletItemProps } from './typings'
 
-function WalletTable() {
+function WalletTable(props: IWalletTableProps) {
+  const { list = [] } = props
   return (
-    <WalletItem name="A/C Balance (before salary credit)" defaultValue={0} />
+    <Box sx={{ marginTop: '1.5rem' }}>
+      {list.map((x: IWalletItemProps, id: number) => (
+        <WalletItem {...x} key={`wallet-item-${id}`} />
+      ))}
+    </Box>
   )
 }
 
