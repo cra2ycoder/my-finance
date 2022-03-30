@@ -45,3 +45,34 @@ a {
   height: 50px;
   align-items: center;
 }
+
+.wallet-table-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 50%;
+  text-align: right;
+}
+
+.year-picker-parent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.year-picker-parent .MuiFormControl-root {
+  width: calc(50% - 1rem);
+}
+
+@media (max-width: 768px) {
+  .page-title,
+  .wallet-table-info,
+  .year-picker-parent {
+    width: 100%;
+  }
+
+  .wallet-table-info {
+    text-align: left;
+  }
+}
