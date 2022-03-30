@@ -9,12 +9,7 @@ function YearPicker() {
   const [value, setValue] = React.useState(new Date())
 
   return (
-    <Box
-      display="flex"
-      justifyContent="space-between"
-      width="100%"
-      marginTop="2rem"
-    >
+    <Box className="year-picker-parent">
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           views={['month']}
