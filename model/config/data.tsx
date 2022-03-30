@@ -4,9 +4,16 @@ import DiamondIcon from '@mui/icons-material/Diamond'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 
 const walletItems = [
-  { name: 'A/C Balance (before salary credit)', value: 0 },
-  { name: 'Salary (take home)', value: 0 },
-  { name: 'Salary Bonus', value: 0 },
+  { name: 'Savings A/C Balance', value: 0, info: 'before salary credit' },
+  {
+    name: 'Salary',
+    value: 0,
+    groups: [
+      { name: 'Take Home', value: 0 },
+      { name: 'Bonus', value: 0 },
+      { name: 'Arrears', value: 0 },
+    ],
+  },
   {
     name: 'Returns',
     value: 0,
@@ -25,8 +32,8 @@ const walletItems = [
     value: 0,
     groups: [
       { name: 'FD Interest', value: 0 },
-      { name: 'Bank Interests (for our a/c balance maintanance)', value: 0 },
-      { name: 'Cashback (Fuel)', value: 0 },
+      { name: 'Bank Interests', value: 0 },
+      { name: 'Cashback', value: 0 },
       { name: 'PF Interest', value: 0 },
     ],
   },
@@ -45,17 +52,18 @@ const walletItems = [
     value: 0,
   },
   {
-    name: 'Other Income (any amount that you received from your family members)',
+    name: 'Other Income',
+    value: 0,
+    info: 'before salary credit',
+    groups: [{ name: 'XXXX', value: 0 }],
+  },
+  {
+    name: 'Personal Loans',
     value: 0,
     groups: [{ name: 'XXXX', value: 0 }],
   },
   {
-    name: 'Personal Loan from Friends/Family Members',
-    value: 0,
-    groups: [{ name: 'XXXX', value: 0 }],
-  },
-  {
-    name: 'Loan paid back (your loan amount returned by the person(s))',
+    name: 'Loan credits',
     value: 0,
     groups: [{ name: 'XXXX', value: 0 }],
   },
