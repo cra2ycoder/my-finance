@@ -3,18 +3,20 @@ body {
   padding: 0;
 }
 
-/* dashboard css added */
-.dashboard-grids-container {
-  grid-template-columns: repeat(2, 1fr);
+a {
+  text-decoration: none !important;
+}
+
+.months-grids-container {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 @media (max-width: 768px) {
-  .dashboard-grids-container {
-    grid-template-columns: repeat(1, 1fr);
+  .months-grids-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* header css */
 .menu-icon-menu p {
   font-size: 0;
 }
@@ -42,14 +44,4 @@ body {
 .header-drawer-parent .menu-icon-wallet {
   height: 50px;
   align-items: center;
-}
-
-.months-grids-container {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-@media (max-width: 768px) {
-  .months-grids-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
