@@ -10,6 +10,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import MenuIcon from '@mui/icons-material/Menu'
+import styles from './styles.module.scss'
 
 function LetterAvatars() {
   return (
@@ -71,16 +72,9 @@ function Header() {
   return (
     <>
       <Box
-        className="header-parent"
+        className={`${styles['header-parent']} header-parent`}
         sx={{
-          display: 'flex',
-          width: '100%',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           backgroundColor: 'secondary.dark',
-          height: 64,
-          p: 2,
-          boxSizing: 'border-box',
         }}
       >
         <Box display="flex" alignItems="center">
