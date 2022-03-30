@@ -17,7 +17,6 @@ function MonthsGrid() {
           <Typography
             sx={{
               color: '#666666',
-              fontWeight: 400,
               fontSize: '1.8vh',
               wordBreak: 'break-word',
             }}
