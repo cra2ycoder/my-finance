@@ -9,7 +9,7 @@ function YearPicker() {
   const [value, setValue] = React.useState(new Date())
 
   return (
-    <Box display="flex" justifyContent="space-between">
+    <Box display="flex" justifyContent="space-between" width="100%">
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           views={['month']}
