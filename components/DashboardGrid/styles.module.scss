@@ -1,10 +1,18 @@
 /* dashboard css added */
 .dashboard-grids-container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .dashboard-grids-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
   .dashboard-grids-container {
     grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
 }

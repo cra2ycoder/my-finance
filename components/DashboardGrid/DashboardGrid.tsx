@@ -14,17 +14,17 @@ function DashboardGridItem(props: IDashboardGridItemProps) {
       <Box
         sx={{
           textAlign: 'center',
-          padding: '20%',
+          padding: '20% 2rem',
         }}
       >
         {icon}
-        <Typography sx={{ color: '#235ad1', fontSize: '3.5vh' }}>
+        <Typography sx={{ color: '#235ad1', fontSize: '2rem' }}>
           {name}
         </Typography>
         <Typography
           sx={{
             color: '#666666',
-            fontSize: '1.8vh',
+            fontSize: '1rem',
             wordBreak: 'break-word',
             fontWeight: 300,
           }}
