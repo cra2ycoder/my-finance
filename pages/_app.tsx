@@ -10,7 +10,7 @@ import '../styles/global.css'
 const theme = createTheme({
   typography: {
     fontFamily: [
-      'IBM Plex Sans',
+      '"IBM Plex Sans"',
       '-apple-system',
       'BlinkMacSystemFont',
       '"Segoe UI"',

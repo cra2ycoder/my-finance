@@ -86,7 +86,9 @@ function Header() {
               setDrawerState(true)
             }}
           />
-          <Typography sx={{ color: 'white', mr: 4 }}>My Finance</Typography>
+          <Typography sx={{ color: 'white', mr: 4, fontWeight: 600 }}>
+            My Finance
+          </Typography>
           <MenuList color="white" />
         </Box>
         <Box display="flex" alignItems="center">
