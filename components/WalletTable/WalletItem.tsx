@@ -6,25 +6,21 @@ import IconButton from '@mui/material/IconButton'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import Button from '@mui/material/Button'
+import EditRoundedIcon from '@mui/icons-material/EditRounded'
+import WalletTable from './WalletTable'
+import { IWalletItemProps } from './typings'
 
-interface WalletItemProps {
-  name: string
-  defaultValue: number | string
-  groups?: WalletItemProps[]
-  enableCollapse?: boolean
-  enableEdit?: boolean
-}
-
-function WalletItem(props: WalletItemProps) {
+function WalletItem(props: IWalletItemProps) {
   const {
     name = 'unknown',
-    defaultValue = 0,
+    info = '',
+    value: defaultValue = 0,
     groups = [],
-    enableCollapse = false,
+    enableCollapse = groups.length > 0,
     enableEdit = true,
   } = props
 
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const [value, setValue] = useState(0)
 
   const toggleCollapse = () => {
@@ -34,15 +30,15 @@ function WalletItem(props: WalletItemProps) {
   return (
     <Box
       sx={{
-        marginTop: '2rem',
+        padding: '1rem',
+        borderBottom: '1px solid #f0f0f0',
       }}
     >
       <Box
         display="flex"
         sx={{
           alignItems: 'center',
-          padding: '0.4rem 1rem',
-          borderBottom: '1px solid #f0f0f0',
+          marginLeft: enableCollapse === false ? '2rem' : '0',
         }}
       >
         {enableCollapse === true && (
@@ -60,28 +56,38 @@ function WalletItem(props: WalletItemProps) {
           width="100%"
           alignItems="center"
         >
-          <Typography
-            sx={{ color: '#235ad1', fontSize: '1rem', fontWeight: 100 }}
-          >
+          <Typography sx={{ color: '#235ad1', fontWeight: 100 }}>
             {name}
+            <Typography
+              sx={{
+                color: '#727272',
+                fontSize: '0.8rem',
+                fontWeight: 100,
+              }}
+            >
+              {info}
+            </Typography>
           </Typography>
           <Typography
             sx={{
-              color: '#235ad1',
-              fontSize: '1rem',
+              color: '#404040',
               fontWeight: 100,
             }}
           >
-            <span style={{ marginRight: '1rem' }}>
+            <span style={{ marginRight: '1rem', fontSize: '1rem' }}>
               Rs. {value || defaultValue}.00
             </span>
-            {enableEdit === true && <Button>edit</Button>}
+            {enableEdit === true && (
+              <Button variant="outlined" sx={{ padding: 0 }}>
+                edit
+              </Button>
+            )}
           </Typography>
         </Box>
       </Box>
       {enableCollapse === true && (
         <Collapse in={open} timeout="auto" unmountOnExit>
-          <Box sx={{ margin: 1 }}>test</Box>
+          <WalletTable list={groups} />
         </Collapse>
       )}
     </Box>
