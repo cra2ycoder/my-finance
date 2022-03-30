@@ -7,16 +7,13 @@ import YearPicker from '@components/YearPicker'
 function Wallet() {
   return (
     <>
-      <Box
-        display="flex"
-        flexWrap="wrap"
-        justifyContent="space-between"
-        sx={{ borderBottom: '1px solid #7b1ea2', paddingBottom: '2rem' }}
-      >
+      <Box className="wallet-table-info">
         <Typography
           sx={{
-            color: '#235ad1',
-            fontSize: '2.5vh',
+            fontSize: '1.5rem',
+            width: '100%',
+            fontWeight: 600,
+            color: 'rgb(19, 47, 76)',
           }}
         >
           <span>Available: </span>
@@ -24,8 +21,10 @@ function Wallet() {
         </Typography>
         <Typography
           sx={{
-            color: '#235ad1',
-            fontSize: '2.5vh',
+            fontSize: '1.5rem',
+            width: '100%',
+            fontWeight: 600,
+            color: '#0179f3',
           }}
         >
           <span>Total Income: </span>
