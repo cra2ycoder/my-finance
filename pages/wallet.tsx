@@ -2,7 +2,6 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import WalletTable from '@components/WalletTable'
-// import MonthsGrid from '@components/MonthsGrid'
 import { walletItems } from '@model/config/data'
 import YearPicker from '@components/YearPicker'
 
@@ -10,7 +9,12 @@ function Wallet() {
   return (
     <Box>
       <Container sx={{ margin: 'auto' }}>
-        <Box display="flex" justifyContent="space-between">
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="space-between"
+          sx={{ borderBottom: '1px solid #7b1ea2', paddingBottom: '2rem' }}
+        >
           <Typography
             sx={{
               color: '#235ad1',
@@ -33,9 +37,8 @@ function Wallet() {
             <span>Total Income: </span>
             <span>Rs. 1,23,400.00</span>
           </Typography>
+          <YearPicker />
         </Box>
-        <YearPicker />
-        {/* <MonthsGrid /> */}
         <WalletTable list={walletItems} />
       </Container>
     </Box>
