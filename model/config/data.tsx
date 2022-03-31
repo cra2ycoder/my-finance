@@ -118,7 +118,7 @@ const dashboardItems = [
     link: '/investments',
   },
   {
-    name: 'Gold Savings',
+    name: 'Golds',
     desc: 'Total golds/gold chit',
     icon: <DiamondIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />,
     link: '/gold-savings',
