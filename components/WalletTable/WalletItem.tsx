@@ -31,6 +31,9 @@ function WalletItem(props: IWalletItemProps) {
       sx={{
         padding: '1rem',
         borderBottom: '1px solid #f0f0f0',
+        borderRadius: '10px',
+        backgroundColor: 'white',
+        marginBottom: '2px',
       }}
     >
       <Box
