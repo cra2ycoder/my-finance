@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fcfcfc;
+  background: #f3f6f9;
 }
 
 html {
@@ -71,6 +71,8 @@ a {
 
 .year-picker-parent .MuiFormControl-root {
   width: calc(50% - 1rem);
+  background-color: white;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
