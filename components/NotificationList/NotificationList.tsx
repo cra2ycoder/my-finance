@@ -7,7 +7,6 @@ import styles from './styles.module.scss'
 function FilterList(props: any) {
   const { list = [], type = 'red' } = props
   const filteredList = list.filter(x => x.alertZone === type)
-  console.log({ filteredList })
 
   return (
     <Box width="100%">
