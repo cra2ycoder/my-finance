@@ -26,7 +26,12 @@ const pageItems = {
     title: 'Notifications',
     desc: 'Keep watching. Be Alert. Ensure everything.',
   },
+  monthlyexpenses: {
+    title: 'Monthly Expenses',
+    desc: 'Daily spends, commitments, unplanned, pending...',
+  },
 }
+
 const walletItems = [
   { name: 'Savings A/C Balance', value: 0, info: 'before salary credit' },
   {
@@ -96,7 +101,7 @@ const walletItems = [
 const dashboardItems = [
   {
     name: 'Monthly Expenses',
-    desc: 'commitments/unplanned/savings/pending',
+    desc: 'commitments/unplanned/savings',
     icon: (
       <AccountBalanceWalletIcon
         sx={{ width: 50, height: 50, fill: '#707b8b' }}
@@ -106,7 +111,7 @@ const dashboardItems = [
   },
   {
     name: 'Investments',
-    desc: 'Overall mutual funds/stocks/returns/SIP',
+    desc: 'Overall mutual Stocks/MFs',
     icon: (
       <CurrencyExchangeIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />
     ),
@@ -237,6 +242,51 @@ const notificationList = [
   },
 ]
 
+const monthlySpentList = [
+  {
+    title: 'Home Allowance',
+    desc: 'monthly amount that will be shared to home',
+    type: 'commitment',
+    value: 7000,
+    on: 'every-month-1',
+  },
+  {
+    title: 'Plot Loan (HDFC)',
+    desc: 'plot loan for 10yrs',
+    type: 'commitment',
+    value: 9923,
+    on: 'every-month-10',
+  },
+  {
+    title: 'Plot Loan (HDFC)',
+    desc: 'plot loan for 10yrs',
+    type: 'commitment',
+    value: 8235,
+    on: 'every-month-10',
+  },
+  {
+    title: 'Macbook Pro Loan (HDFC)',
+    desc: 'laptop loan for 11months',
+    type: 'commitment',
+    value: 8333,
+    on: 'every-month-10',
+  },
+  {
+    title: 'Personal Expenses',
+    desc: 'personal use',
+    type: 'commitment',
+    value: 3000,
+    on: 'every-month-10',
+  },
+  {
+    title: 'LIC Jeevan Arockya',
+    desc: 'insurance for medical',
+    type: 'commitment',
+    value: 293,
+    on: 'every-month-29',
+  },
+]
+
 export {
   walletItems,
   dashboardItems,
@@ -244,4 +294,5 @@ export {
   goldItems,
   pageItems,
   notificationList,
+  monthlySpentList,
 }
