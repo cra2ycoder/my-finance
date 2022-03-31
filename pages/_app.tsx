@@ -33,7 +33,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <Box marginTop="6rem">
+      <Box paddingTop="6rem">
         <Container sx={{ margin: 'auto', display: 'flex', flexWrap: 'wrap' }}>
           <Box width="50%" className="page-title">
             <Typography
