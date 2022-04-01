@@ -72,9 +72,16 @@ function WalletItem(props: IWalletItemProps) {
           <Typography
             sx={{
               color: '#404040',
+              display: 'flex',
             }}
           >
-            <span style={{ marginRight: '1rem', fontSize: '1rem' }}>
+            <span
+              style={{
+                marginRight: '1rem',
+                fontSize: '1.2rem',
+                fontWeight: 600,
+              }}
+            >
               Rs. {value || defaultValue}.00
             </span>
             {enableEdit === true && (
