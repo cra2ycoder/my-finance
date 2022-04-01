@@ -4,10 +4,33 @@
   height: 64px;
   align-items: center;
   justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.header-wrapper {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0 2rem;
-  box-sizing: border-box;
   z-index: 1;
+}
+
+.header-submenu-wrapper {
+  width: 100%;
+  background-color: white;
+}
+
+.header-submenu-parent {
+  display: flex;
+  padding: 0.6rem 0;
+}
+
+@media (max-width: 1024px) {
+  .menu-list-parent-desktop {
+    display: none;
+  }
+  .menu-list-parent-mobile {
+    flex-direction: column;
+  }
 }

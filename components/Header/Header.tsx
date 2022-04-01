@@ -6,16 +6,19 @@ import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
 import Drawer from '@mui/material/Drawer'
 import Typography from '@mui/material/Typography'
-import DashboardIcon from '@mui/icons-material/Dashboard'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import MenuIcon from '@mui/icons-material/Menu'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import { deepPurple } from '@mui/material/colors'
 import styles from './styles.module.scss'
 
 function LetterAvatars() {
   return (
     <Stack direction="row" spacing={2}>
-      <Avatar>M</Avatar>
+      <Avatar sx={{ backgroundColor: deepPurple[500] }}>
+        <AccountCircleIcon />
+      </Avatar>
     </Stack>
   )
 }
@@ -23,7 +26,7 @@ function LetterAvatars() {
 function NotificationBadge() {
   return (
     <Badge badgeContent={4} color="warning" sx={{ mr: 4 }}>
-      <NotificationsIcon color="action" sx={{ fill: 'white' }} />
+      <NotificationsIcon color="action" sx={{ fill: 'black' }} />
     </Badge>
   )
 }
@@ -47,22 +50,23 @@ function HeaderMenuIcon(props: any = {}) {
 
 function MenuList(props = {}) {
   return (
-    <>
-      <HeaderMenuIcon
-        iconComponent={<DashboardIcon sx={{ fill: props?.color || 'black' }} />}
-        title="Dashboard"
-        color={props.color}
-        link="/dashboard"
-      />
-      <HeaderMenuIcon
-        iconComponent={
-          <AccountBalanceWalletIcon sx={{ fill: props?.color || 'black' }} />
+    <Box marginLeft="2rem" display="flex" className={props.className}>
+      {['Dashboard', 'Wallet', 'Debits', 'Investments', 'Golds', 'Loans'].map(
+        x => {
+          const pageLink = '/' + x.toLowerCase().replace(/ /g, '-')
+
+          return (
+            <Link href={pageLink}>
+              <Typography
+                sx={{ margin: '0.8rem', color: props.color, fontWeight: 600 }}
+              >
+                {x}
+              </Typography>
+            </Link>
+          )
         }
-        title="Wallet"
-        color={props.color}
-        link="/wallet"
-      />
-    </>
+      )}
+    </Box>
   )
 }
 
@@ -70,26 +74,29 @@ function Header() {
   const [drawerState, setDrawerState] = useState(false)
 
   return (
-    <>
+    <header className={styles['header-wrapper']}>
       <Box
         className={`${styles['header-parent']} header-parent`}
         sx={{
-          background:
-            'linear-gradient(-90deg, rgb(0, 89, 178), rgb(0, 127, 255) 120%)',
+          background: 'white',
+          boxShadow: 'inset 0px -1px 1px #e7ebf0',
+          backgroundColor: 'rgba(255,255,255,0.72)',
+          backdropFilter: 'blur(20px)',
         }}
       >
         <Box display="flex" alignItems="center">
           <HeaderMenuIcon
-            iconComponent={<MenuIcon sx={{ fill: 'white' }} />}
+            iconComponent={<MenuIcon sx={{ fill: '#1976d2' }} />}
             title="Menu"
             onClick={() => {
               setDrawerState(true)
             }}
           />
-          <Typography sx={{ color: 'white', mr: 4, fontWeight: 600 }}>
-            My Finance
-          </Typography>
-          <MenuList color="white" />
+          <AccountBalanceWalletIcon sx={{ fill: '#1976d2', fontSize: 35 }} />
+          <MenuList
+            color="black"
+            className={styles['menu-list-parent-desktop']}
+          />
         </Box>
         <Box display="flex" alignItems="center">
           <NotificationBadge />
@@ -105,9 +112,9 @@ function Header() {
           setDrawerState(!drawerState)
         }}
       >
-        <MenuList />
+        <MenuList className={styles['menu-list-parent-mobile']} />
       </Drawer>
-    </>
+    </header>
   )
 }
 
