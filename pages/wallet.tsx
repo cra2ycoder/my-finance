@@ -45,8 +45,9 @@ function Wallet() {
     <Box width="100%">
       <PageTitle {...pageItems.wallet} />
       <Box
+        className="wallet-info-panel"
         sx={{
-          display: 'flex',
+          display: 'grid',
           background:
             'linear-gradient(to right bottom, rgb(18 55 92), rgb(74 30 114) 120%)',
           marginBottom: '1rem',
@@ -54,10 +55,12 @@ function Wallet() {
           marginLeft: '-2rem',
           marginRight: '-2rem',
           justifyContent: 'space-between',
+          gridTemplateColumns: 'repeat(4, 1fr)',
         }}
       >
         <Money name="Balance" value="8765"></Money>
         <Money name="Spent" value="99765"></Money>
+        <Money name="Savings" value="28500"></Money>
         <Money name="Total" value="104630"></Money>
       </Box>
       <WalletTable list={walletItems} />
