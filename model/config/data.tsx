@@ -19,6 +19,14 @@ const pageItems = {
     title: 'Monthly Expenses',
     desc: 'Daily spends, commitments, unplanned, pending...',
   },
+  loans: {
+    title: 'Loans',
+    desc: 'Total Loans, EMIs.',
+  },
+  investments: {
+    title: 'Investments',
+    desc: 'Total investments on Stocks, Bitcoins, Mutual funds etc.,',
+  },
 }
 
 const walletItems = [
