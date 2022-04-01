@@ -1,5 +1,4 @@
 import React from 'react'
-import Box from '@mui/material/Box'
 import WalletItem from './WalletItem'
 import { IWalletTableProps, IWalletItemProps } from './typings'
 
