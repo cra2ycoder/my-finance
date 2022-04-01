@@ -1,10 +1,3 @@
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance'
-import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange'
-import DiamondIcon from '@mui/icons-material/Diamond'
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
-import FlagIcon from '@mui/icons-material/Flag'
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
-
 const pageItems = {
   home: {
     title: '',
@@ -22,11 +15,7 @@ const pageItems = {
     title: 'Wallet',
     desc: 'Total income details. Earn, Save and Spend.',
   },
-  notifications: {
-    title: 'Notifications',
-    desc: 'Keep watching. Be Alert. Ensure everything.',
-  },
-  monthlyexpenses: {
+  debits: {
     title: 'Monthly Expenses',
     desc: 'Daily spends, commitments, unplanned, pending...',
   },
@@ -98,57 +87,6 @@ const walletItems = [
   },
 ]
 
-const dashboardItems = [
-  {
-    name: 'Monthly Expenses',
-    desc: 'commitments/unplanned/savings',
-    icon: (
-      <AccountBalanceWalletIcon
-        sx={{ width: 50, height: 50, fill: '#707b8b' }}
-      />
-    ),
-    link: '/monthly-expenses',
-  },
-  {
-    name: 'Investments',
-    desc: 'Overall mutual Stocks/MFs',
-    icon: (
-      <CurrencyExchangeIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />
-    ),
-    link: '/investments',
-  },
-  {
-    name: 'Golds',
-    desc: 'Total golds/gold chit',
-    icon: <DiamondIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />,
-    link: '/gold-savings',
-  },
-  {
-    name: 'Loans',
-    desc: 'Personal/Plot/Home/Gold loans and EMIs',
-    icon: (
-      <AccountBalanceIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />
-    ),
-    link: '/loans',
-  },
-  {
-    name: 'Goals',
-    desc: 'Current year goal!',
-    icon: <FlagIcon sx={{ width: 50, height: 50, fill: '#707b8b' }} />,
-    link: '/goals',
-  },
-  {
-    name: 'Notifications',
-    desc: 'Upcoming...',
-    icon: (
-      <NotificationsActiveIcon
-        sx={{ width: 50, height: 50, fill: '#707b8b' }}
-      />
-    ),
-    link: '/notifications',
-  },
-]
-
 const months = [
   'JAN',
   'FEB',
@@ -206,43 +144,7 @@ const goldItems = [
   },
 ]
 
-const notificationList = [
-  {
-    title: 'Interest will be credited!',
-    desc: 'HDFC mutual funds interest will be paid on or before 15th of this month. And, the expected amount is between Rs. 2000 - Rs. 4000',
-    alertZone: 'red', // orange, green, yellow
-    commitment: 'monthly',
-    on: 'every-month-30',
-    type: 'credit', // 'debit'
-    category: 'loan', //sip, returns, redemption, interest
-  },
-  {
-    title: 'Interest will be credited!',
-    alertZone: 'red', // orange, green, yellow
-    commitment: 'monthly',
-    on: 'every-month-30',
-    type: 'credit', // 'debit'
-    category: 'loan', //sip, returns, redemption, interest
-  },
-  {
-    title: 'Interest will be credited!',
-    alertZone: 'red', // orange, green, yellow
-    commitment: 'monthly',
-    on: 'every-month-30',
-    type: 'credit', // 'debit'
-    category: 'loan', //sip, returns, redemption, interest
-  },
-  {
-    title: 'Interest will be credited!',
-    alertZone: 'red', // orange, green, yellow
-    commitment: 'monthly',
-    on: 'every-month-30',
-    type: 'credit', // 'debit'
-    category: 'loan', //sip, returns, redemption, interest
-  },
-]
-
-const monthlySpentList = [
+const debitList = [
   {
     title: 'Home Allowance',
     desc: 'monthly amount that will be shared to home',
@@ -357,12 +259,4 @@ const monthlySpentList = [
   },
 ]
 
-export {
-  walletItems,
-  dashboardItems,
-  months,
-  goldItems,
-  pageItems,
-  notificationList,
-  monthlySpentList,
-}
+export { walletItems, months, goldItems, pageItems, debitList }
