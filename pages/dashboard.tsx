@@ -1,7 +1,13 @@
-import DashboardGrid from '@components/DashboardGrid'
+import Box from '@mui/material/Box'
+import PageTitle from '@components/PageTitle'
+import { pageItems } from '@model/config'
 
 function Dashboard() {
-  return <DashboardGrid />
+  return (
+    <Box>
+      <PageTitle {...pageItems.dashboard}></PageTitle>
+    </Box>
+  )
 }
 
 export default Dashboard
