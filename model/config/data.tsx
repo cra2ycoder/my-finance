@@ -31,7 +31,7 @@ const pageItems = {
 
 const walletItems = [
   {
-    name: 'In Personal wallet',
+    name: 'In Personal Wallet',
     value: 0,
   },
   {
@@ -67,23 +67,23 @@ const walletItems = [
     ],
   },
   {
-    name: 'Interests Received',
+    name: 'Interests',
     value: 0,
     groups: [
-      { name: 'FD Interest', value: 0 },
-      { name: 'Bank Interests', value: 0 },
+      { name: 'Fixed Deposit (FD)', value: 0 },
+      { name: 'Axis Bank', value: 0 },
       { name: 'Cashback', value: 0 },
-      { name: 'PF Interest', value: 0 },
+      { name: 'Profident Fund (PF)', value: 0 },
     ],
   },
   {
     name: 'Redemption',
     value: 0,
     groups: [
-      { name: 'Axis Direct Redemption', value: 0 },
-      { name: 'MF Redemption', value: 0 },
-      { name: 'Bitcoin Redemption', value: 0 },
-      { name: 'Stocks Redemption', value: 0 },
+      { name: 'Axis Direct', value: 0 },
+      { name: 'MF', value: 0 },
+      { name: 'Bitcoin', value: 0 },
+      { name: 'Stocks', value: 0 },
     ],
   },
   {
@@ -98,7 +98,7 @@ const walletItems = [
     groups: [{ name: 'XXXX', value: 0 }],
   },
   {
-    name: 'Loan credits',
+    name: 'Loan Credits',
     value: 0,
     groups: [{ name: 'XXXX', value: 0 }],
   },
