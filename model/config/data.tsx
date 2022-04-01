@@ -30,7 +30,20 @@ const pageItems = {
 }
 
 const walletItems = [
-  { name: 'Savings A/C Balance', value: 0, info: 'before salary credit' },
+  {
+    name: 'In Personal wallet',
+    value: 0,
+  },
+  {
+    name: 'Savings A/C Balance',
+    value: 0,
+    info: 'before salary credit',
+    groups: [
+      { name: 'Axis', value: 0 },
+      { name: 'SBI', value: 0 },
+      { name: 'HDFC', value: 0 },
+    ],
+  },
   {
     name: 'Salary',
     value: 0,
@@ -72,10 +85,6 @@ const walletItems = [
       { name: 'Bitcoin Redemption', value: 0 },
       { name: 'Stocks Redemption', value: 0 },
     ],
-  },
-  {
-    name: 'As Cash in personal wallet',
-    value: 0,
   },
   {
     name: 'Other Income',
