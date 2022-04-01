@@ -1,11 +1,10 @@
 import React from 'react'
-import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
 function Footer() {
   return (
-    <Box
-      sx={{
+    <footer
+      style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -22,7 +21,7 @@ function Footer() {
       >
         Copyright © 2022 Cra2yCoder.
       </Typography>
-    </Box>
+    </footer>
   )
 }
 
