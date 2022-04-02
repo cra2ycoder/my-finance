@@ -11,6 +11,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import MenuIcon from '@mui/icons-material/Menu'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { deepPurple } from '@mui/material/colors'
+import { MonthlyPicker, YearlyPicker } from '@components/Calendar'
 import styles from './styles.module.scss'
 
 function LetterAvatars() {
@@ -99,6 +100,10 @@ function Header() {
           />
         </Box>
         <Box display="flex" alignItems="center">
+          <Box>
+            <MonthlyPicker />
+            <YearlyPicker />
+          </Box>
           <NotificationBadge />
           <LetterAvatars />
         </Box>
