@@ -69,21 +69,16 @@ function WalletItem(props: IWalletItemProps) {
               {info}
             </Typography>
           </Typography>
-          <Typography
-            sx={{
-              color: '#404040',
-              display: 'flex',
-            }}
-          >
-            <span
-              style={{
-                marginRight: '1rem',
-                fontSize: '1.2rem',
-                fontWeight: 600,
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Typography
+              className="wallet-price"
+              sx={{
+                color: '#404040',
+                fontWeight: 700,
               }}
             >
               Rs. {value || defaultValue}.00
-            </span>
+            </Typography>
             {enableEdit === true && (
               <Button
                 variant="outlined"
@@ -92,7 +87,7 @@ function WalletItem(props: IWalletItemProps) {
                 edit
               </Button>
             )}
-          </Typography>
+          </Box>
         </Box>
       </Box>
       {enableCollapse === true && (
