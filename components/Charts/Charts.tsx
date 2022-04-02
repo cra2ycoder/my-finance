@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import {
@@ -10,6 +11,7 @@ import {
   Legend,
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
+import { MonthlyPicker, YearlyPicker, SpentPicker } from '@components/Calendar'
 import { options, yearlyData, monthlyData } from './options'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
@@ -43,7 +45,18 @@ function Chart(props: any) {
 
 function MonthlyChart() {
   return (
-    <Chart title=" Monthly Spent for 2022">
+    <Chart title="Monthly spent for the Year, 2022">
+      <Box
+        sx={{
+          display: 'flex',
+          marginBottom: '2rem',
+          justifyContent: 'space-between',
+        }}
+        className="chart-filter"
+      >
+        <SpentPicker />
+        <YearlyPicker />
+      </Box>
       <Bar options={options} data={yearlyData} />
     </Chart>
   )
@@ -51,7 +64,18 @@ function MonthlyChart() {
 
 function DailyChart() {
   return (
-    <Chart title="Daily Spent for April, 2022.">
+    <Chart title="Daily Spent for the April, 2022">
+      <Box
+        sx={{
+          display: 'flex',
+          marginBottom: '2rem',
+          justifyContent: 'space-between',
+        }}
+        className="chart-filter"
+      >
+        <SpentPicker />
+        <MonthlyPicker />
+      </Box>
       <Bar options={options} data={monthlyData} />
     </Chart>
   )
