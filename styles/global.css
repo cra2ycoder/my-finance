@@ -106,3 +106,7 @@ a {
     gap: 2rem;
   }
 }
+
+.chart-filter .MuiFormControl-fullWidth {
+  width: calc(50% - 1rem);
+}
