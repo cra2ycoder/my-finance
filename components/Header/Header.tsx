@@ -8,10 +8,10 @@ import Drawer from '@mui/material/Drawer'
 import Typography from '@mui/material/Typography'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import DateRangeIcon from '@mui/icons-material/DateRange'
 import MenuIcon from '@mui/icons-material/Menu'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { deepPurple } from '@mui/material/colors'
-import { MonthlyPicker, YearlyPicker } from '@components/Calendar'
 import styles from './styles.module.scss'
 
 function LetterAvatars() {
@@ -26,7 +26,7 @@ function LetterAvatars() {
 
 function NotificationBadge() {
   return (
-    <Badge badgeContent={4} color="warning" sx={{ mr: 4 }}>
+    <Badge badgeContent={4} color="warning">
       <NotificationsIcon color="action" sx={{ fill: 'black' }} />
     </Badge>
   )
@@ -99,12 +99,20 @@ function Header() {
             className={styles['menu-list-parent-desktop']}
           />
         </Box>
-        <Box display="flex" alignItems="center">
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            width: '150px',
+            justifyContent: 'space-between',
+          }}
+        >
           <Box>
-            <MonthlyPicker />
-            <YearlyPicker />
+            <DateRangeIcon />
           </Box>
-          <NotificationBadge />
+          <Box>
+            <NotificationBadge />
+          </Box>
           <LetterAvatars />
         </Box>
       </Box>
