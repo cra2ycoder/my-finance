@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  /* overflow: hidden; */
   background: #f3f6f9;
 }
 
@@ -16,7 +18,7 @@ a {
 }
 
 .main-app-wrapper {
-  padding-top: 6rem;
+  padding-top: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
 }
