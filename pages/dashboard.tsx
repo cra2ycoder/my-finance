@@ -1,6 +1,10 @@
 import Box from '@mui/material/Box'
 import PageTitle from '@components/PageTitle'
-import { MonthlyChart, DailyChart } from '@components/Charts'
+import {
+  MonthlyChart,
+  DailyChart,
+  YearlySavingsChart,
+} from '@components/Charts'
 import { pageItems } from '@model/config'
 
 function Dashboard() {
@@ -10,6 +14,7 @@ function Dashboard() {
       <Box>
         <MonthlyChart />
         <DailyChart />
+        <YearlySavingsChart />
       </Box>
     </Box>
   )
