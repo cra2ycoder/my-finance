@@ -6,22 +6,33 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js'
-import { Bar } from 'react-chartjs-2'
+import { Bar, Line } from 'react-chartjs-2'
 import { MonthlyPicker, YearlyPicker, SpentPicker } from '@components/Calendar'
-import { options, yearlyData, monthlyData } from './options'
+import { options, yearlyData, monthlyData, yearlySSData } from './options'
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+)
 
 function Chart(props: any) {
   return (
     <Paper
       elevation={1}
       sx={{
-        padding: '3% 5%',
+        padding: '3% 10%',
         marginBottom: '4rem',
         marginLeft: '-2rem',
         marginRight: '-2rem',
@@ -81,5 +92,24 @@ function DailyChart() {
   )
 }
 
-export { Chart, MonthlyChart, DailyChart }
+function YearlySavingsChart() {
+  return (
+    <Chart title="Yearly spent & savings for the Year, 2022">
+      <Box
+        sx={{
+          display: 'flex',
+          marginBottom: '2rem',
+          justifyContent: 'space-between',
+        }}
+        className="chart-filter"
+      >
+        <YearlyPicker />
+        <YearlyPicker />
+      </Box>
+      <Line options={options} data={yearlySSData} />
+    </Chart>
+  )
+}
+
+export { Chart, MonthlyChart, DailyChart, YearlySavingsChart }
 export default DailyChart
