@@ -48,8 +48,8 @@ function FilterList(props: any) {
         {filteredList.length === 0 && (
           <Typography>There are no {title} items</Typography>
         )}
-        {filteredList.map(x => (
-          <DebitItem {...x} />
+        {filteredList.map((x, idx) => (
+          <DebitItem {...x} key={`filtered-item-${idx}`} />
         ))}
       </Box>
     </Box>
