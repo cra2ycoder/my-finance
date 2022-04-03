@@ -87,7 +87,6 @@ function DebitItem(props: IDebitItemProps) {
           <EventRepeatIcon />
           <span style={{ marginLeft: '0.4rem' }}>postponed</span>
         </Button>
-
         <Button variant="outlined" color="success">
           <DoneIcon />
           <span style={{ marginLeft: '0.4rem' }}>done</span>
