@@ -5,9 +5,9 @@ import Drawer from '@mui/material/Drawer'
 import Typography from '@mui/material/Typography'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import MenuIcon from '@mui/icons-material/Menu'
-import CalendarPicker from '@components/Calendar/CalendarPicker'
 import NotificationBadge from './NotificationBadge'
 import Profile from './Profile'
+import DateSelector from './DateSelector'
 import styles from './styles.module.scss'
 
 function HeaderMenuIcon(props: any = {}) {
@@ -84,7 +84,7 @@ function Header() {
             marginRight: '-1rem',
           }}
         >
-          <CalendarPicker />
+          <DateSelector />
           <NotificationBadge />
           <Profile />
         </Box>
