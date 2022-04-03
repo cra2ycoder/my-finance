@@ -59,4 +59,22 @@ const monthlyData = {
   ],
 }
 
-export { options, labels, yearlyData, dates, monthlyData }
+const yearlySSData = {
+  labels: dates,
+  datasets: [
+    {
+      label: 'Expenses',
+      data: dates.map(() => Math.random() * 150000),
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+    {
+      label: 'Savings',
+      data: dates.map(() => Math.random() * 150000),
+      borderColor: 'rgb(53, 162, 235)',
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
+  ],
+}
+
+export { options, labels, yearlyData, dates, monthlyData, yearlySSData }
