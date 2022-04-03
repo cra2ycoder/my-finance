@@ -1,36 +1,14 @@
 import React, { useState } from 'react'
 import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
-import Badge from '@mui/material/Badge'
-import Avatar from '@mui/material/Avatar'
-import Stack from '@mui/material/Stack'
 import Drawer from '@mui/material/Drawer'
 import Typography from '@mui/material/Typography'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import DateRangeIcon from '@mui/icons-material/DateRange'
 import MenuIcon from '@mui/icons-material/Menu'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import { deepPurple } from '@mui/material/colors'
+import CalendarPicker from '@components/Calendar/CalendarPicker'
+import NotificationBadge from './NotificationBadge'
+import Profile from './Profile'
 import styles from './styles.module.scss'
-
-function LetterAvatars() {
-  return (
-    <Stack direction="row" spacing={2}>
-      <Avatar sx={{ backgroundColor: deepPurple[500] }}>
-        <AccountCircleIcon />
-      </Avatar>
-    </Stack>
-  )
-}
-
-function NotificationBadge() {
-  return (
-    <Badge badgeContent={4} color="warning">
-      <NotificationsIcon color="action" sx={{ fill: 'black' }} />
-    </Badge>
-  )
-}
 
 function HeaderMenuIcon(props: any = {}) {
   return (
@@ -102,17 +80,13 @@ function Header() {
           sx={{
             display: 'flex',
             alignItems: 'center',
-            width: '150px',
             justifyContent: 'space-between',
+            marginRight: '-1rem',
           }}
         >
-          <Box>
-            <DateRangeIcon />
-          </Box>
-          <Box>
-            <NotificationBadge />
-          </Box>
-          <LetterAvatars />
+          <CalendarPicker />
+          <NotificationBadge />
+          <Profile />
         </Box>
       </Box>
       <Drawer
