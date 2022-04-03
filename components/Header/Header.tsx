@@ -53,11 +53,10 @@ function MenuList(props = {}) {
   return (
     <Box marginLeft="2rem" display="flex" className={props.className}>
       {['Dashboard', 'Wallet', 'Debits', 'Investments', 'Golds', 'Loans'].map(
-        x => {
+        (x, idx) => {
           const pageLink = '/' + x.toLowerCase().replace(/ /g, '-')
-
           return (
-            <Link href={pageLink}>
+            <Link href={pageLink} key={`menu-item-${idx}`}>
               <Typography
                 sx={{ margin: '0.8rem', color: props.color, fontWeight: 600 }}
               >
