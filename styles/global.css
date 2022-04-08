@@ -112,3 +112,7 @@ a {
 .chart-filter .MuiFormControl-fullWidth {
   width: calc(50% - 1rem);
 }
+
+.MuiModal-root[id='notification-menu'] .MuiPaper-root {
+  width: 360px;
+}
