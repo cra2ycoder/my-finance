@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import EventIcon from '@mui/icons-material/Event'
@@ -18,7 +19,7 @@ function DateSelector() {
   }
 
   return (
-    <div>
+    <Box>
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -42,7 +43,7 @@ function DateSelector() {
           <YearlyPicker />
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   )
 }
 
