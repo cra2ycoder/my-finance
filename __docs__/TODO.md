@@ -1,0 +1,8 @@
+- [ ] write types for all the components
+- [ ] css cleanups
+- [ ] switch themes _global styling_
+- [ ] responsive updates
+- [ ] implement investment page
+- [ ] implement gold page
+- [ ] implement loan page
+- [ ] data needs to be splitted once all finalized
