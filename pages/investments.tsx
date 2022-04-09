@@ -1,13 +1,38 @@
-import Box from '@mui/material/Box'
+import React from 'react'
 import PageTitle from '@components/PageTitle'
-import { pageItems } from '@model/config'
+import MoneyBox, { MoneyBoxHolder } from '@components/MoneyBox'
+import { investmentList, pageItems } from '@model/config'
 
-function Investments() {
+function MonthlyExpenses() {
+  const filters = [
+    {
+      type: 'mf',
+      title: 'Mutual Funds',
+    },
+    {
+      type: 'stocks',
+      title: 'Stocks',
+    },
+    {
+      type: 'bitcoins',
+      title: 'Bitcoins',
+    },
+    {
+      type: 'deposits',
+      title: 'Deposits',
+    },
+  ]
+
   return (
-    <Box>
+    <>
       <PageTitle {...pageItems.investments}></PageTitle>
-    </Box>
+      <MoneyBoxHolder>
+        {filters.map(x => (
+          <MoneyBox list={investmentList} {...x} />
+        ))}
+      </MoneyBoxHolder>
+    </>
   )
 }
 
-export default Investments
+export default MonthlyExpenses
