@@ -119,48 +119,6 @@ const months = [
   'DEC',
 ]
 
-const goldItems = [
-  {
-    name: 'Gold Savings',
-    value: 0,
-    groups: [
-      {
-        name: 'Mens Chains',
-        grams: 16,
-        value: 0,
-        belongsTo: 'mohaa',
-        at: 'home',
-      },
-      {
-        name: 'Necklace',
-        grams: 42,
-        value: 0,
-        belongsTo: 'wife',
-        at: 'bank',
-      },
-      {
-        name: 'Simple thread chain',
-        grams: 16,
-        value: 0,
-        belongsTo: 'jo',
-        at: 'home',
-      },
-      {
-        name: 'Bangles',
-        grams: 16,
-        value: 0,
-        belongsTo: 'jo',
-        at: 'home',
-      },
-    ],
-  },
-  {
-    name: 'Gold Chits',
-    value: 0,
-    groups: [{ name: 'GRT Jewelers', value: 0, installment: 10000 }],
-  },
-]
-
 const debitList = [
   {
     title: 'Home Allowance',
@@ -276,4 +234,30 @@ const debitList = [
   },
 ]
 
-export { walletItems, months, goldItems, pageItems, debitList }
+const loanList = [
+  {
+    title: 'HDFC Bank (Kovilpalayam Plot)',
+    desc: 'monthly amount that will be shared to home',
+    type: 'plot',
+    value: 1500000,
+    on: 'every-month-10',
+  },
+  {
+    title: 'Canara Bank (Kovilpalayam Plot)',
+    desc: 'monthly amount that will be shared to home',
+    type: 'gold',
+    value: 192000,
+    on: 'every-month-10',
+  },
+  {
+    title: 'HDFC Bank (Macbook Pro)',
+    desc: 'monthly amount that will be shared to home',
+    type: 'others',
+    value: 100000,
+    on: 'every-month-10',
+  },
+]
+
+const goldList = []
+
+export { walletItems, months, pageItems, debitList, loanList, goldList }
