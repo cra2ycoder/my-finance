@@ -27,6 +27,10 @@ const pageItems = {
     title: 'Investments',
     desc: 'Total investments on Stocks, Bitcoins, Mutual funds etc.,',
   },
+  insurances: {
+    title: 'Insurances',
+    desc: 'Total insurance coverage details will be added here.',
+  },
 }
 
 const walletItems = [
@@ -260,4 +264,17 @@ const loanList = [
 
 const goldList = []
 
-export { walletItems, months, pageItems, debitList, loanList, goldList }
+const investmentList = []
+
+const insuranceList = []
+
+export {
+  walletItems,
+  months,
+  pageItems,
+  debitList,
+  loanList,
+  goldList,
+  investmentList,
+  insuranceList,
+}
