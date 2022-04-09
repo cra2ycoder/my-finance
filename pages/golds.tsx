@@ -1,13 +1,42 @@
-import Box from '@mui/material/Box'
+import React from 'react'
 import PageTitle from '@components/PageTitle'
-import { pageItems } from '@model/config'
+import MoneyBox, { MoneyBoxHolder } from '@components/MoneyBox'
+import { goldList, pageItems } from '@model/config'
 
-function Golds() {
+function MonthlyExpenses() {
+  const filters = [
+    {
+      type: 'chains',
+      title: 'Chains',
+    },
+    {
+      type: 'rings',
+      title: 'Rings',
+    },
+    {
+      type: 'bangles',
+      title: 'Bangles',
+    },
+    {
+      type: 'haaram',
+      title: 'Haarams',
+    },
+    {
+      type: 'bracelet',
+      title: 'Bracelets',
+    },
+  ]
+
   return (
-    <Box>
+    <>
       <PageTitle {...pageItems.golds}></PageTitle>
-    </Box>
+      <MoneyBoxHolder>
+        {filters.map(x => (
+          <MoneyBox list={goldList} {...x} />
+        ))}
+      </MoneyBoxHolder>
+    </>
   )
 }
 
-export default Golds
+export default MonthlyExpenses
