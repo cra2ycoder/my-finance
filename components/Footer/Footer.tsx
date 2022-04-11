@@ -1,5 +1,6 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
+import Link from '@mui/material/Link'
 
 function Footer() {
   return (
@@ -13,13 +14,13 @@ function Footer() {
         marginTop: '2rem',
       }}
     >
-      <Typography
-        sx={{
-          color: '#727272',
-          fontSize: '0.8rem',
-        }}
-      >
-        Copyright © 2022 Cra2yCoder.
+      <Typography variant="body2" color="text.secondary" align="center">
+        {'Copyright © '}
+        <Link color="inherit" href="https://cra2ycoder.github.io/profile">
+          Cra2y Coder
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
       </Typography>
     </footer>
   )
