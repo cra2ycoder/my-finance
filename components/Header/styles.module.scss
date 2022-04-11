@@ -34,3 +34,9 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 768px) {
+  .header-parent {
+    padding: 0 1rem;
+  }
+}
