@@ -4,10 +4,13 @@ const options = {
     legend: {
       position: 'top',
     },
+    interaction: {
+      intersect: false,
+    },
   },
 }
 
-const labels = [
+const months = [
   'January',
   'February',
   'March',
@@ -23,21 +26,21 @@ const labels = [
 ]
 
 const yearlyData = {
-  labels,
+  labels: months,
   datasets: [
     {
       label: 'Income',
-      data: labels.map(() => Math.random() * 150000),
+      data: months.map(() => Math.random() * 150000),
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
       label: 'Expenses',
-      data: labels.map(() => Math.random() * 150000),
+      data: months.map(() => Math.random() * 150000),
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
       label: 'Savings',
-      data: labels.map(() => Math.random() * 150000),
+      data: months.map(() => Math.random() * 150000),
       backgroundColor: 'rgb(36 255 0 / 50%)',
     },
   ],
@@ -59,22 +62,43 @@ const monthlyData = {
   ],
 }
 
+const monthlyIncomeData = {
+  labels: months,
+  datasets: [
+    {
+      label: 'Income',
+      data: dates.map(() => Math.random() * 150000),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+  ],
+}
+
 const yearlySSData = {
-  labels: dates,
+  labels: [2018, 2019, 2020, 2021, 2022, 2023],
   datasets: [
     {
       label: 'Expenses',
       data: dates.map(() => Math.random() * 150000),
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      fill: 'start',
     },
     {
       label: 'Savings',
       data: dates.map(() => Math.random() * 150000),
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      fill: 'start',
     },
   ],
 }
 
-export { options, labels, yearlyData, dates, monthlyData, yearlySSData }
+export {
+  options,
+  months,
+  yearlyData,
+  dates,
+  monthlyData,
+  monthlyIncomeData,
+  yearlySSData,
+}

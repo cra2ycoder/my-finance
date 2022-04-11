@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
+import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import {
   Chart as ChartJS,
@@ -14,7 +15,13 @@ import {
 } from 'chart.js'
 import { Bar, Line } from 'react-chartjs-2'
 import { MonthlyPicker, YearlyPicker, SpentPicker } from '@components/Calendar'
-import { options, yearlyData, monthlyData, yearlySSData } from './options'
+import {
+  options,
+  yearlyData,
+  monthlyData,
+  monthlyIncomeData,
+  yearlySSData,
+} from './options'
 
 ChartJS.register(
   CategoryScale,
@@ -32,11 +39,10 @@ function Chart(props: any) {
     <Paper
       elevation={1}
       sx={{
-        padding: '3% 10%',
-        marginBottom: '4rem',
-        marginLeft: '-2rem',
-        marginRight: '-2rem',
-        borderRadius: 0,
+        padding: '2rem',
+        marginBottom: '1rem',
+        borderRadius: 4,
+        boxSizing: 'border-box',
       }}
     >
       <Typography
@@ -49,6 +55,24 @@ function Chart(props: any) {
       >
         {props.title}
       </Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          gap: '1rem',
+          height: '40px',
+          marginBottom: '2rem',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+        className="chart-filter"
+      >
+        <SpentPicker />
+        <MonthlyPicker />
+        <YearlyPicker />
+        <Button id="showt-button" variant="contained">
+          Show
+        </Button>
+      </Box>
       {props.children}
     </Paper>
   )
@@ -57,18 +81,15 @@ function Chart(props: any) {
 function MonthlyChart() {
   return (
     <Chart title="Monthly spent for the Year, 2022">
-      <Box
-        sx={{
-          display: 'flex',
-          marginBottom: '2rem',
-          justifyContent: 'space-between',
-        }}
-        className="chart-filter"
-      >
-        <SpentPicker />
-        <YearlyPicker />
-      </Box>
       <Bar options={options} data={yearlyData} />
+    </Chart>
+  )
+}
+
+function MonthlyIncomeChart() {
+  return (
+    <Chart title="Monthly Income, 2022">
+      <Line options={options} data={monthlyIncomeData} />
     </Chart>
   )
 }
@@ -76,17 +97,6 @@ function MonthlyChart() {
 function DailyChart() {
   return (
     <Chart title="Daily Spent for the April, 2022">
-      <Box
-        sx={{
-          display: 'flex',
-          marginBottom: '2rem',
-          justifyContent: 'space-between',
-        }}
-        className="chart-filter"
-      >
-        <SpentPicker />
-        <MonthlyPicker />
-      </Box>
       <Bar options={options} data={monthlyData} />
     </Chart>
   )
@@ -95,21 +105,16 @@ function DailyChart() {
 function YearlySavingsChart() {
   return (
     <Chart title="Yearly spent & savings for the Year, 2022">
-      <Box
-        sx={{
-          display: 'flex',
-          marginBottom: '2rem',
-          justifyContent: 'space-between',
-        }}
-        className="chart-filter"
-      >
-        <YearlyPicker />
-        <YearlyPicker />
-      </Box>
       <Line options={options} data={yearlySSData} />
     </Chart>
   )
 }
 
-export { Chart, MonthlyChart, DailyChart, YearlySavingsChart }
+export {
+  Chart,
+  MonthlyChart,
+  DailyChart,
+  YearlySavingsChart,
+  MonthlyIncomeChart,
+}
 export default DailyChart
