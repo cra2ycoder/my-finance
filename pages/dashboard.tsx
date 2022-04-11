@@ -4,6 +4,7 @@ import {
   MonthlyChart,
   DailyChart,
   YearlySavingsChart,
+  MonthlyIncomeChart,
 } from '@components/Charts'
 import { pageItems } from '@model/config'
 
@@ -11,9 +12,10 @@ function Dashboard() {
   return (
     <Box>
       <PageTitle {...pageItems.dashboard} />
-      <Box>
-        <MonthlyChart />
+      <Box className="dashboard-page-wrapper">
+        <MonthlyIncomeChart />
         <DailyChart />
+        <MonthlyChart />
         <YearlySavingsChart />
       </Box>
     </Box>
