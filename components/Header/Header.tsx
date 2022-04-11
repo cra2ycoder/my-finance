@@ -14,7 +14,7 @@ function HeaderMenuIcon(props: any = {}) {
   return (
     <Link href={props.link}>
       <Box
-        sx={{ display: 'flex', mr: 1, pl: 2, pr: 2 }}
+        sx={{ display: 'flex', mr: 1, pr: 2 }}
         className={`menu-icon-${props?.title?.toLowerCase()}`}
         onClick={props?.onClick}
       >
