@@ -28,8 +28,8 @@ export default function MyApp({ Component, pageProps }) {
       <Header />
       <main className="main-app-wrapper">
         <Component {...pageProps} />
-        <Footer />
       </main>
+      <Footer />
     </ThemeProvider>
   )
 }
