@@ -14,6 +14,7 @@ import {
   Legend,
 } from 'chart.js'
 import { Bar, Line } from 'react-chartjs-2'
+import CallMadeIcon from '@mui/icons-material/CallMade'
 import { MonthlyPicker, YearlyPicker, SpentPicker } from '@components/Calendar'
 import {
   options,
@@ -45,16 +46,35 @@ function Chart(props: any) {
         boxSizing: 'border-box',
       }}
     >
-      <Typography
+      <Box
         sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
           width: '100%',
-          fontWeight: 600,
-          fontSize: '2rem',
           marginBottom: '2rem',
         }}
       >
-        {props.title}
-      </Typography>
+        <Typography
+          sx={{
+            fontWeight: 600,
+            fontSize: '2rem',
+          }}
+        >
+          {props.title}
+        </Typography>
+        <Typography
+          sx={{
+            fontWeight: 400,
+            fontSize: '1rem',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <CallMadeIcon />
+          <span style={{ marginLeft: '0.5rem' }}>+2.65% than last month</span>
+        </Typography>
+      </Box>
       <Box
         sx={{
           display: 'flex',
@@ -80,7 +100,7 @@ function Chart(props: any) {
 
 function MonthlyChart() {
   return (
-    <Chart title="Monthly spent for the Year, 2022">
+    <Chart title="Monthly Spent, 2022">
       <Bar options={options} data={yearlyData} />
     </Chart>
   )
@@ -96,15 +116,15 @@ function MonthlyIncomeChart() {
 
 function DailyChart() {
   return (
-    <Chart title="Daily Spent for the April, 2022">
-      <Bar options={options} data={monthlyData} />
+    <Chart title="Daily Spent, 2022">
+      <Line options={options} data={monthlyData} />
     </Chart>
   )
 }
 
 function YearlySavingsChart() {
   return (
-    <Chart title="Yearly spent & savings for the Year, 2022">
+    <Chart title="Yearly Status, 2022">
       <Line options={options} data={yearlySSData} />
     </Chart>
   )
