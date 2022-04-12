@@ -1,6 +1,6 @@
 import React from 'react'
 import PageTitle from '@components/PageTitle'
-import MoneyBox, { MoneyBoxHolder } from '@components/MoneyBox'
+import { MoneyBoxTab } from '@components/MoneyBox'
 import { debitList, pageItems } from '@model/config'
 
 function MonthlyExpenses() {
@@ -21,12 +21,8 @@ function MonthlyExpenses() {
 
   return (
     <>
-      <PageTitle {...pageItems.debits}></PageTitle>
-      <MoneyBoxHolder>
-        {filters.map(x => (
-          <MoneyBox list={debitList} {...x} />
-        ))}
-      </MoneyBoxHolder>
+      <PageTitle {...pageItems.debits} />
+      <MoneyBoxTab list={debitList} filters={filters} />
     </>
   )
 }
