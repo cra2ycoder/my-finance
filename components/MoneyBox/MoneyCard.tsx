@@ -29,30 +29,22 @@ function MoneyCard(props: IMoneyCardProps) {
         flexDirection: 'column',
         justifyContent: 'space-between',
       }}
-      elevation={1}
+      // elevation={1}
+      variant="elevation"
     >
       <Box>
         <Typography
           sx={{
-            fontSize: '1.3rem',
+            // fontSize: '1rem',
             fontWeight: 600,
             color: 'rgb(19, 47, 76)',
           }}
         >
           {title}
         </Typography>
-        {/* <Typography
-            sx={{
-              fontSize: '0.9rem',
-              fontWeight: 400,
-              color: 'rgb(62, 80, 96)',
-            }}
-          >
-            {desc}
-          </Typography> */}
         <Typography
           sx={{
-            fontSize: '0.9rem',
+            // fontSize: '1rem',
             fontWeight: 400,
             color: 'rgb(62, 80, 96)',
           }}
@@ -63,7 +55,7 @@ function MoneyCard(props: IMoneyCardProps) {
           sx={{
             fontSize: '1.5rem',
             fontWeight: 700,
-            color: '#0072e3',
+            color: 'rgb(19, 47, 76)',
           }}
         >
           Rs.{value}.00
