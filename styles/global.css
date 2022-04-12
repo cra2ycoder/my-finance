@@ -147,3 +147,11 @@ a {
     grid-gap: 1rem;
   }
 }
+
+.MuiTabs-flexContainer {
+  border-bottom: 2px solid #ccc;
+}
+
+.MuiTabs-flexContainer > button {
+  font-size: 1rem;
+}
