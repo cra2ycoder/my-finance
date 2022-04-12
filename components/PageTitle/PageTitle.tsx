@@ -11,7 +11,7 @@ function PageTitle(props: any) {
       className="page-title"
       display="flex"
       justifyContent="space-between"
-      marginBottom="1rem"
+      marginBottom="2rem"
     >
       <Box>
         <Typography
@@ -27,7 +27,6 @@ function PageTitle(props: any) {
           sx={{
             fontSize: '2vh',
             fontWeight: 300,
-            marginBottom: '2rem',
             color: 'rgb(62, 80, 96)',
           }}
         >
