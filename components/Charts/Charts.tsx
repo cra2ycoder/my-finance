@@ -59,6 +59,8 @@ function Chart(props: any) {
           sx={{
             fontWeight: 600,
             fontSize: '2rem',
+            color: 'rgb(19, 47, 76)',
+            letterSpacing: -1,
           }}
         >
           {props.title}
