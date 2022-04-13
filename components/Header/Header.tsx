@@ -3,7 +3,9 @@ import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
 import MenuIcon from '@mui/icons-material/Menu'
 import NotificationBadge from './NotificationBadge'
 import Profile from './Profile'
@@ -92,6 +94,9 @@ function Header() {
         >
           <DateSelector />
           <NotificationBadge />
+          <Button>
+            <DarkModeIcon />
+          </Button>
           <Profile />
         </Box>
       </Box>
