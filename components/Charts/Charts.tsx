@@ -91,7 +91,7 @@ function Chart(props: any) {
         <SpentPicker />
         <MonthlyPicker />
         <YearlyPicker />
-        <Button id="showt-button" variant="contained">
+        <Button id="show-button" variant="contained">
           Show
         </Button>
       </Box>
