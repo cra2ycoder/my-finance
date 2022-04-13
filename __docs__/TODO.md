@@ -12,3 +12,4 @@
 - [ ] header calender -> with animate experience for better ux
 - [ ] top menu selection/deselection implementation
 - [ ] `Rs.0.00 / Rs.0.00` should be single/double based on the section
+- [ ] warning bug fixes
