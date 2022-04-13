@@ -28,6 +28,7 @@ function DateSelector() {
         onClick={handleClick}
       >
         <EventIcon />
+        <span style={{ marginLeft: '1rem' }}>April, 2022.</span>
       </Button>
       <Menu
         id="basic-menu"
