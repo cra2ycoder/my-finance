@@ -46,8 +46,14 @@ function MoneyBox(props: any) {
           fullWidth={true}
         >
           <AddIcon sx={{ fontSize: 40 }} />
-          <span style={{ marginLeft: '0.4rem', fontSize: '1.2rem' }}>
-            Add {title}
+          <span
+            style={{
+              marginLeft: '0.4rem',
+              fontSize: '1.2rem',
+              letterSpacing: 0,
+            }}
+          >
+            ADD {title.toUpperCase()}
           </span>
         </Button>
       </Box>
