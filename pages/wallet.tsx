@@ -1,68 +1,33 @@
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import WalletTable from '@components/WalletTable'
 import PageTitle from '@components/PageTitle'
+import { MoneyTable } from '@components/MoneyBox'
 import { walletItems, pageItems } from '@model/config'
 
-function Money(props: any) {
-  const { name, value } = props
-
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        paddingLeft: '2rem',
-        borderLeft: '1px solid #1f4a75',
-      }}
-    >
-      <Typography
-        sx={{
-          width: '100%',
-          fontSize: '1.5rem',
-          fontWeight: 700,
-          color: '#99CCF3',
-        }}
-      >
-        {name}
-      </Typography>
-      <Typography
-        sx={{
-          width: '100%',
-          fontWeight: 600,
-          fontSize: '2rem',
-          color: 'white',
-        }}
-      >
-        Rs.{value}.00
-      </Typography>
-    </Box>
-  )
-}
-
 function Wallet() {
+  const moneyList = [
+    {
+      name: 'Wallet Balance',
+      value: '8,765',
+    },
+    {
+      name: 'Total Spent',
+      value: '99,765',
+    },
+    {
+      name: 'Total Savings',
+      value: '28,500',
+    },
+    {
+      name: 'Grand Total',
+      value: '1,04,630',
+    },
+  ]
+
   return (
     <Box width="100%">
       <PageTitle {...pageItems.wallet} />
-      <Box
-        className="wallet-info-panel"
-        sx={{
-          display: 'grid',
-          background:
-            'linear-gradient(to right bottom, rgb(18 55 92), rgb(74 30 114) 120%)',
-          marginBottom: '1rem',
-          padding: '4rem 2rem',
-          marginLeft: '-2rem',
-          marginRight: '-2rem',
-          justifyContent: 'space-between',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-        }}
-      >
-        <Money name="Balance" value="8765"></Money>
-        <Money name="Spent" value="99765"></Money>
-        <Money name="Savings" value="28500"></Money>
-        <Money name="Total" value="104630"></Money>
-      </Box>
+      <MoneyTable list={moneyList} settings={{ showButtons: false }} />
       <WalletTable list={walletItems} />
     </Box>
   )
