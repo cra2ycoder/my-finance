@@ -18,7 +18,7 @@ function PageTitle(props: any) {
           sx={{
             fontSize: '4rem',
             fontWeight: 700,
-            color: 'rgb(24 118 209)', //rgb(19, 47, 76)
+            color: 'rgb(24 118 209)',
             letterSpacing: -4,
             lineHeight: 1,
           }}
