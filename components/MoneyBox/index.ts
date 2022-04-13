@@ -1,4 +1,5 @@
 export * from './MoneyCard'
 export * from './MoneyBox'
 export * from './Money'
+export * from './MoneyTable'
 export { default } from './MoneyBox'

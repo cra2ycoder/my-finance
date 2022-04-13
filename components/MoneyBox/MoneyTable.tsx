@@ -1,0 +1,33 @@
+import React from 'react'
+import Box from '@mui/material/Box'
+import Money from './Money'
+
+function MoneyTable(props: any) {
+  const { list = [], settings = {} } = props
+
+  const gridColumns = list.length <= 4 ? list.length : 5
+
+  return (
+    <Box
+      className="wallet-info-panel"
+      sx={{
+        display: 'grid',
+        background:
+          'linear-gradient(to right bottom, rgb(18 55 92), rgb(74 30 114) 120%)',
+        marginBottom: '1rem',
+        padding: '4rem 2rem',
+        marginLeft: '-2rem',
+        marginRight: '-2rem',
+        justifyContent: 'space-between',
+        gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
+      }}
+    >
+      {list.map(x => (
+        <Money {...x} {...settings} />
+      ))}
+    </Box>
+  )
+}
+
+export { MoneyTable }
+export default MoneyTable
