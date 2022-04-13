@@ -5,7 +5,7 @@ import CallMadeIcon from '@mui/icons-material/CallMade'
 import Button from '@mui/material/Button'
 
 function Money(props: any) {
-  const { name, value } = props
+  const { name, value, showButtons = true } = props
 
   return (
     <Box
@@ -22,6 +22,7 @@ function Money(props: any) {
           fontSize: '1.5rem',
           fontWeight: 400,
           color: '#99CCF3',
+          letterSpacing: -1,
         }}
       >
         {name}
@@ -33,6 +34,7 @@ function Money(props: any) {
           fontSize: '2rem',
           color: 'white',
           marginTop: -1.5,
+          letterSpacing: -1,
         }}
       >
         Rs.{value}.00
@@ -52,9 +54,11 @@ function Money(props: any) {
           +2.65% than last month
         </span>
       </Typography>
-      <Button id="showt-button" variant="contained">
-        View
-      </Button>
+      {showButtons && (
+        <Button id="show-button" variant="contained">
+          View
+        </Button>
+      )}
     </Box>
   )
 }
