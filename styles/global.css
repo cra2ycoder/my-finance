@@ -163,3 +163,25 @@ a {
   letter-spacing: 0;
   font-weight: 600;
 }
+
+.wallet-table-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .wallet-table-wrapper {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .wallet-table-wrapper {
+    grid-template-columns: repeat(1, 1fr); 
+  }
+}
+
+.MuiTabs-scroller .MuiTabs-flexContainer {
+  padding: 0 1rem;
+}
