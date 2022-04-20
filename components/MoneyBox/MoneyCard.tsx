@@ -28,23 +28,23 @@ function MoneyCard(props: IMoneyCardProps) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        borderBottom: '2px solid #f0f0f0',
       }}
-      // elevation={1}
+      elevation={0}
       variant="elevation"
     >
       <Box>
         <Typography
           sx={{
-            // fontSize: '1rem',
             fontWeight: 600,
-            color: 'rgb(19, 47, 76)',
+            color: 'rgb(24 118 209)',
           }}
         >
           {title}
         </Typography>
         <Typography
           sx={{
-            // fontSize: '1rem',
+            fontSize: '14px',
             fontWeight: 400,
             color: 'rgb(62, 80, 96)',
           }}
@@ -56,32 +56,34 @@ function MoneyCard(props: IMoneyCardProps) {
             fontSize: '1.5rem',
             fontWeight: 700,
             color: 'rgb(19, 47, 76)',
+            margin: '6px 0',
           }}
         >
           Rs.{value}.00
         </Typography>
       </Box>
       <Box
-        display="flex"
-        justifyContent="space-between"
-        paddingTop="1rem"
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          paddingTop: '0.6rem',
+          marginLeft: '-0.4rem',
+          marginRight: '-0.4rem',
+          borderTop: '1px solid #f0f0f0',
+        }}
         className={styles['action-buttons']}
       >
-        <Button variant="outlined" color="error">
+        <Button variant="outlined">
           <DeleteIcon />
-          <span style={{ marginLeft: '0.4rem' }}>remove</span>
         </Button>
-        <Button variant="outlined" color="error">
+        <Button variant="outlined">
           <CloseIcon />
-          <span style={{ marginLeft: '0.4rem' }}>decline</span>
         </Button>
         <Button variant="outlined">
           <EventRepeatIcon />
-          <span style={{ marginLeft: '0.4rem' }}>postponed</span>
         </Button>
-        <Button variant="outlined" color="success">
+        <Button variant="outlined">
           <DoneIcon />
-          <span style={{ marginLeft: '0.4rem' }}>done</span>
         </Button>
       </Box>
     </Paper>

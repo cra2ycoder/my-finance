@@ -21,15 +21,33 @@ function MoneyBox(props: any) {
 
   return (
     <Box width="100%" paddingBottom="2rem" borderBottom="1px solid #d9d9d9">
-      <Typography
-        sx={{
-          fontSize: '2rem',
-          fontWeight: 700,
-          marginBottom: '1rem',
-        }}
-      >
-        Rs.0.00 / Rs.{totalValue}.00
-      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Typography
+          sx={{
+            fontSize: '2rem',
+            fontWeight: 700,
+            marginBottom: '1rem',
+            width: '75%',
+          }}
+        >
+          Rs.0.00 / Rs.{totalValue}.00
+        </Typography>
+        <Button
+          variant="contained"
+          sx={{ height: '100%', borderRadius: '4px' }}
+          className={styles['add-button']}
+        >
+          <AddIcon />
+          <span
+            style={{
+              marginLeft: '0.4rem',
+              letterSpacing: 0,
+            }}
+          >
+            ADD {title.toUpperCase()}
+          </span>
+        </Button>
+      </Box>
       {filteredList.length === 0 && (
         <Typography sx={{ margin: '2rem 0' }}>
           There are no {title} items
@@ -39,23 +57,6 @@ function MoneyBox(props: any) {
         {filteredList.map((x, idx) => (
           <MoneyCard {...x} key={`filtered-item-${idx}`} />
         ))}
-        <Button
-          variant="contained"
-          sx={{ height: '100%', borderRadius: '10px', minHeight: '176px' }}
-          className={styles['add-button']}
-          fullWidth={true}
-        >
-          <AddIcon sx={{ fontSize: 40 }} />
-          <span
-            style={{
-              marginLeft: '0.4rem',
-              fontSize: '1.2rem',
-              letterSpacing: 0,
-            }}
-          >
-            ADD {title.toUpperCase()}
-          </span>
-        </Button>
       </Box>
     </Box>
   )
@@ -78,7 +79,7 @@ function MoneyBoxTab(props: any) {
           variant="scrollable"
           scrollButtons={false}
           aria-label="scrollable prevent tabs example"
-          sx={{ marginLeft: '-1rem', marginRight: '-1rem' }}
+          sx={{ marginLeft: '-2rem', marginRight: '-2rem' }}
         >
           {filters.map((x, idx) => (
             <Tab label={x.title} value={idx.toString()} />
