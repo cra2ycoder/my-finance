@@ -7,21 +7,26 @@ import Button from '@mui/material/Button'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import MenuIcon from '@mui/icons-material/Menu'
+import { useTheme } from '@mui/material/styles'
 import NotificationBadge from './NotificationBadge'
 import Profile from './Profile'
 import DateSelector from './DateSelector'
 import styles from './styles.module.scss'
 
 function HeaderMenuIcon(props: any = {}) {
+  const theme = useTheme()
+
   return (
-    <Link href={props.link}>
+    <Link href={props.link} underline="none">
       <Box
         sx={{ display: 'flex', mr: 1, pr: 2 }}
         className={`menu-icon-${props?.title?.toLowerCase()}`}
         onClick={props?.onClick}
       >
         {props.iconComponent || <></>}
-        <Typography sx={{ color: props?.color || 'black', marginLeft: 1 }}>
+        <Typography
+          sx={{ color: props?.color || 'black', marginLeft: theme.spacing(1) }}
+        >
           {props.title || ''}
         </Typography>
       </Box>
@@ -29,23 +34,32 @@ function HeaderMenuIcon(props: any = {}) {
   )
 }
 
-function MenuList(props = {}) {
+function MenuList(props: any = {}) {
+  const theme = useTheme()
+
+  const defaultMenuList = [
+    'Dashboard',
+    'Wallet',
+    'Debits',
+    'Investments',
+    'Golds',
+    'Loans',
+    'Insurances',
+  ]
+
   return (
-    <Box marginLeft="2rem" display="flex" className={props.className}>
-      {[
-        'Dashboard',
-        'Wallet',
-        'Debits',
-        'Investments',
-        'Golds',
-        'Loans',
-        'Insurances',
-      ].map((x, idx) => {
+    <Box className={`${styles.menuListWrapper} ${props.className}`}>
+      {defaultMenuList.map((x: string, idx: number) => {
         const pageLink = '/' + x.toLowerCase().replace(/ /g, '-')
+
         return (
-          <Link href={pageLink} key={`menu-item-${idx}`}>
+          <Link href={pageLink} key={`menu-item-${idx}`} underline="none">
             <Typography
-              sx={{ margin: '0.8rem', color: props.color, fontWeight: 600 }}
+              sx={{
+                margin: theme.spacing(0.8),
+                color: props.color,
+                fontWeight: theme.typography.fontWeightMedium,
+              }}
             >
               {x}
             </Typography>
@@ -57,41 +71,36 @@ function MenuList(props = {}) {
 }
 
 function Header() {
+  const theme = useTheme()
   const [drawerState, setDrawerState] = useState(false)
 
   return (
-    <header className={styles['header-wrapper']}>
+    <header className={styles.headerWrapper}>
       <Box
-        className={`${styles['header-parent']} header-parent`}
+        className={styles.headerParent}
         sx={{
-          background: 'white',
-          boxShadow: 'inset 0px -1px 1px #e7ebf0',
-          backgroundColor: 'rgba(255,255,255,0.72)',
-          backdropFilter: 'blur(20px)',
+          backgroundColor: theme.palette.common.white,
         }}
       >
-        <Box display="flex" alignItems="center">
+        <Box className={styles.headerLeftPanel}>
           <HeaderMenuIcon
-            iconComponent={<MenuIcon sx={{ fill: '#1976d2' }} />}
-            title="Menu"
+            iconComponent={
+              <MenuIcon sx={{ fill: theme.palette.primary.main }} />
+            }
+            title=""
             onClick={() => {
               setDrawerState(true)
             }}
           />
-          <AccountBalanceWalletIcon sx={{ fill: '#1976d2', fontSize: 35 }} />
+          <AccountBalanceWalletIcon
+            sx={{ fill: theme.palette.primary.main, fontSize: 35 }}
+          />
           <MenuList
-            color="black"
-            className={styles['menu-list-parent-desktop']}
+            className={styles.menuListParentDesktop}
+            color={theme.palette.common.black}
           />
         </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginRight: '-1rem',
-          }}
-        >
+        <Box className={styles.headerRightPanel}>
           <DateSelector />
           <NotificationBadge />
           <Button>
@@ -101,15 +110,17 @@ function Header() {
         </Box>
       </Box>
       <Drawer
-        className="header-drawer-parent"
-        sx={{ width: '300px' }}
+        className={styles.headerDrawerParent}
         anchor="left"
         open={drawerState}
         onClose={() => {
           setDrawerState(!drawerState)
         }}
       >
-        <MenuList className={styles['menu-list-parent-mobile']} />
+        <MenuList
+          color={theme.palette.primary.main}
+          className={styles.menuListParentMobile}
+        />
       </Drawer>
     </header>
   )
