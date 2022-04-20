@@ -3,6 +3,7 @@ import Footer from '@components/Footer'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import lightTheme from '@styles/lightTheme'
+import { MainFlexBox } from '@components/Base/Layout'
 import '../styles/global.scss'
 
 export default function MyApp({ Component, pageProps }) {
@@ -10,9 +11,9 @@ export default function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={lightTheme}>
       <CssBaseline />
       <Header />
-      <main className="main-app-wrapper">
-        {/* <Component {...pageProps} /> */}
-      </main>
+      <MainFlexBox>
+        <Component {...pageProps} />
+      </MainFlexBox>
       <Footer />
     </ThemeProvider>
   )
