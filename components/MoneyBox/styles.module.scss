@@ -1,7 +1,7 @@
 .ms-grids-container {
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .action-buttons {
@@ -9,9 +9,9 @@
 }
 
 .action-buttons button {
-  font-size: 0;
+  // font-size: 0;
   margin: 6px;
-  padding: 3px 0;
+  padding: 6px 0;
   flex-grow: 1;
 }
 
