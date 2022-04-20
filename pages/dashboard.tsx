@@ -12,7 +12,7 @@ import { pageItems } from '@model/config'
 
 function Dashboard() {
   const moneyList = [
-    { name: 'A/C Balance', value: '54,835' },
+    { name: 'Wallet Balance', value: '54,835' },
     { name: 'Total Properties', value: '67,25,000' },
     { name: 'Total Investments', value: '34,67,291' },
     { name: 'Total Golds', value: '11,08,128' },
