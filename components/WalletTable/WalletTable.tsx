@@ -7,11 +7,11 @@ function WalletTable(props: IWalletTableProps) {
   const { list = [] } = props
 
   return (
-    <Box>
+    <>
       {list.map((x: IWalletItemProps, id: number) => (
         <WalletItem {...x} key={`wallet-item-${id}`} />
       ))}
-    </Box>
+    </>
   )
 }
 
