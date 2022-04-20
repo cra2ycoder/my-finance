@@ -36,11 +36,11 @@ const pageItems = {
 const walletItems = [
   {
     name: 'In Personal Wallet',
-    value: 0,
+    value: 324211,
   },
   {
     name: 'Savings A/C Balance',
-    value: 0,
+    value: 324211,
     info: 'before salary credit',
     groups: [
       { name: 'Axis', value: 0 },
@@ -50,7 +50,7 @@ const walletItems = [
   },
   {
     name: 'Salary',
-    value: 0,
+    value: 324211,
     groups: [
       { name: 'Take Home', value: 0 },
       { name: 'Bonus', value: 0 },
@@ -59,7 +59,7 @@ const walletItems = [
   },
   {
     name: 'Returns',
-    value: 0,
+    value: 324211,
     groups: [
       { name: 'MF Returns: HDFC (4.58L)', value: 0 },
       { name: 'MF Returns: ABSL (6.69L)', value: 0 },
@@ -72,7 +72,7 @@ const walletItems = [
   },
   {
     name: 'Interests',
-    value: 0,
+    value: 324211,
     groups: [
       { name: 'Fixed Deposit (FD)', value: 0 },
       { name: 'Axis Bank', value: 0 },
@@ -82,7 +82,7 @@ const walletItems = [
   },
   {
     name: 'Redemption',
-    value: 0,
+    value: 324211,
     groups: [
       { name: 'Axis Direct', value: 0 },
       { name: 'MF', value: 0 },
@@ -91,19 +91,19 @@ const walletItems = [
     ],
   },
   {
-    name: 'Other Income',
-    value: 0,
+    name: 'Other Income(s)',
+    value: 324211,
     info: 'before salary credit',
     groups: [{ name: 'XXXX', value: 0 }],
   },
   {
     name: 'Personal Loans',
-    value: 0,
+    value: 324211,
     groups: [{ name: 'XXXX', value: 0 }],
   },
   {
     name: 'Loan Credits',
-    value: 0,
+    value: 324211,
     groups: [{ name: 'XXXX', value: 0 }],
   },
 ]
