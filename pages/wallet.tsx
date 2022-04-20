@@ -28,7 +28,9 @@ function Wallet() {
     <Box width="100%">
       <PageTitle {...pageItems.wallet} />
       <MoneyTable list={moneyList} settings={{ showButtons: false }} />
-      <WalletTable list={walletItems} />
+      <Box className="wallet-table-wrapper">
+        <WalletTable list={walletItems} />
+      </Box>
     </Box>
   )
 }
