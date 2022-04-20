@@ -1,0 +1,11 @@
+.mainFlexBox {
+    width: 100%;
+    padding: 2rem;
+    min-height: calc(100% - 200px);
+}
+
+@media (max-width: 768px) {
+    .mainFlexBox {
+        padding:1rem;
+    }
+}
