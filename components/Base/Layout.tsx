@@ -15,15 +15,33 @@ function FluidFlexBox({ children, ...rest }: any = {}) {
   )
 }
 
-function GridBox({
-  children,
-  columns = {},
-  className = '',
-  sx = {},
-  breakpoints = {},
-  ...rest
-}: any = {}) {
+interface IBreakpointProps {
+  xs?: number
+  sm?: number
+  md?: number
+  lg?: number
+  xl?: number
+}
+
+interface IGridBoxProps {
+  children: React.ReactNode
+  columns: IBreakpointProps
+  breakpoints?: IBreakpointProps
+  sx?: any
+  [key: string]: any
+}
+
+function GridBox(props: IGridBoxProps) {
+  const {
+    children,
+    columns = {},
+    className = '',
+    sx = {},
+    breakpoints = {},
+    ...rest
+  } = props
   const { xs = 0, sm = 0, md = 0, lg = 0, xl = 0 } = columns
+
   const theme = useTheme()
 
   const getBreakPointsCSS = () => {
