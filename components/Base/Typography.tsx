@@ -1,5 +1,7 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
+import Link from '@mui/material/Link'
+import { useTheme } from '@mui/material/styles'
 
 interface ITypoProps {
   text: string
@@ -38,6 +40,29 @@ function PageSubHeading({ text }: ITypoProps) {
   )
 }
 
-// function MainHeading() {}
+interface IMenuLinkProps {
+  link: string
+  text: string
+  color?: string
+}
 
-export { PageHeading, PageSubHeading }
+function MenuLink(props: IMenuLinkProps) {
+  const { link, text, color } = props
+  const theme = useTheme()
+
+  return (
+    <Link href={link} underline="none">
+      <Typography
+        sx={{
+          margin: '0.8rem',
+          color: color || theme.palette.primary.dark,
+          fontWeight: theme.typography.fontWeightMedium,
+        }}
+      >
+        {text}
+      </Typography>
+    </Link>
+  )
+}
+
+export { PageHeading, PageSubHeading, MenuLink }
