@@ -8,6 +8,7 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useTheme } from '@mui/material/styles'
+import { MenuLink } from '@components/Base/Typography'
 import NotificationBadge from './NotificationBadge'
 import Profile from './Profile'
 import DateSelector from './DateSelector'
@@ -56,7 +57,6 @@ function HeaderMenuIcon(props: IHeaderMenuIconProps) {
 
 function MenuList(props: IMenuListProps) {
   const { className = '', color = '' } = props
-  const theme = useTheme()
 
   const defaultMenuList = [
     'Dashboard',
@@ -72,19 +72,13 @@ function MenuList(props: IMenuListProps) {
     <Box className={`${styles.menuListWrapper} ${className}`}>
       {defaultMenuList.map((x: string, idx: number) => {
         const pageLink = '/' + x.toLowerCase().replace(/ /g, '-')
-
         return (
-          <Link href={pageLink} key={`menu-item-${idx}`} underline="none">
-            <Typography
-              sx={{
-                margin: theme.spacing(0.8),
-                color,
-                fontWeight: theme.typography.fontWeightMedium,
-              }}
-            >
-              {x}
-            </Typography>
-          </Link>
+          <MenuLink
+            key={`menu-item-${idx}`}
+            link={pageLink}
+            text={x}
+            color={color}
+          />
         )
       })}
     </Box>
