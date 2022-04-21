@@ -20,7 +20,7 @@ export default createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1976d2',
+      main: 'rgb(24, 118, 209)',
     },
     background: {
       default: '#f3f6f9',
