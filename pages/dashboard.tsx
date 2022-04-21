@@ -8,6 +8,7 @@ import {
   MonthlyIncomeChart,
 } from '@components/Charts'
 import { MoneyTable } from '@components/MoneyBox'
+import { GridBox } from '@components/Base/Layout'
 import { pageItems } from '@model/config'
 
 function Dashboard() {
@@ -50,12 +51,15 @@ function Dashboard() {
         </Typography>
       </PageTitle>
       <MoneyTable list={moneyList} />
-      <Box className="dashboard-page-wrapper">
+      <GridBox
+        className="dashboard-graphs-wrapper"
+        columns={{ lg: 2, md: 1, sm: 1 }}
+      >
         <MonthlyIncomeChart />
         <DailyChart />
         <MonthlyChart />
         <YearlySavingsChart />
-      </Box>
+      </GridBox>
     </Box>
   )
 }
