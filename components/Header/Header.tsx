@@ -13,28 +13,49 @@ import Profile from './Profile'
 import DateSelector from './DateSelector'
 import styles from './styles.module.scss'
 
-function HeaderMenuIcon(props: any = {}) {
+interface IHeaderMenuIconProps {
+  title: string
+  link?: string
+  color?: string
+  onClick?: () => void
+  iconComponent?: React.ReactNode
+}
+
+interface IMenuListProps {
+  className: string
+  color: string
+}
+
+function HeaderMenuIcon(props: IHeaderMenuIconProps) {
+  const {
+    link = '',
+    title = '',
+    color = '',
+    iconComponent = <></>,
+    onClick = () => {},
+  } = props
   const theme = useTheme()
 
   return (
-    <Link href={props.link} underline="none">
+    <Link href={link} underline="none">
       <Box
         sx={{ display: 'flex', mr: 1, pr: 2 }}
-        className={`menu-icon-${props?.title?.toLowerCase()}`}
-        onClick={props?.onClick}
+        className={`menu-icon-${title?.toLowerCase()}`}
+        onClick={onClick}
       >
-        {props.iconComponent || <></>}
+        {iconComponent || <></>}
         <Typography
-          sx={{ color: props?.color || 'black', marginLeft: theme.spacing(1) }}
+          sx={{ color: color || 'black', marginLeft: theme.spacing(1) }}
         >
-          {props.title || ''}
+          {title || ''}
         </Typography>
       </Box>
     </Link>
   )
 }
 
-function MenuList(props: any = {}) {
+function MenuList(props: IMenuListProps) {
+  const { className = '', color = '' } = props
   const theme = useTheme()
 
   const defaultMenuList = [
@@ -48,7 +69,7 @@ function MenuList(props: any = {}) {
   ]
 
   return (
-    <Box className={`${styles.menuListWrapper} ${props.className}`}>
+    <Box className={`${styles.menuListWrapper} ${className}`}>
       {defaultMenuList.map((x: string, idx: number) => {
         const pageLink = '/' + x.toLowerCase().replace(/ /g, '-')
 
@@ -57,7 +78,7 @@ function MenuList(props: any = {}) {
             <Typography
               sx={{
                 margin: theme.spacing(0.8),
-                color: props.color,
+                color,
                 fontWeight: theme.typography.fontWeightMedium,
               }}
             >
@@ -79,7 +100,7 @@ function Header() {
       <Box
         className={styles.headerParent}
         sx={{
-          backgroundColor: theme.palette.common.white,
+          backgroundColor: 'rgba(255, 255, 255, 0.72)',
         }}
       >
         <Box className={styles.headerLeftPanel}>
