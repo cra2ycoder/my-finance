@@ -14,11 +14,11 @@ function PageTitle(props: IPageTitleProps) {
 
   return (
     <FluidFlexBox marginBottom="2rem" flexWrap="wrap" gap="2rem">
-      <Box>
+      <Box flexGrow={1}>
         <PageHeading text={title} />
         <PageSubHeading text={desc} />
       </Box>
-      <Box>{children}</Box>
+      <Box flexGrow={1}>{children}</Box>
     </FluidFlexBox>
   )
 }
