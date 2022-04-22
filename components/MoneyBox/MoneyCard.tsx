@@ -2,6 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
 import DoneIcon from '@mui/icons-material/Done'
 import CloseIcon from '@mui/icons-material/Close'
 import EventRepeatIcon from '@mui/icons-material/EventRepeat'
@@ -71,20 +72,20 @@ function MoneyCard(props: IMoneyCardProps) {
           marginRight: '-0.4rem',
           borderTop: '1px solid #f0f0f0',
         }}
-        className={styles['action-buttons']}
+        // className={styles['action-buttons']}
       >
-        <Button variant="outlined">
+        <IconButton>
           <DeleteIcon />
-        </Button>
-        <Button variant="outlined">
+        </IconButton>
+        <IconButton>
           <CloseIcon />
-        </Button>
-        <Button variant="outlined">
+        </IconButton>
+        <IconButton>
           <EventRepeatIcon />
-        </Button>
-        <Button variant="outlined">
+        </IconButton>
+        <IconButton>
           <DoneIcon />
-        </Button>
+        </IconButton>
       </Box>
     </Paper>
   )
