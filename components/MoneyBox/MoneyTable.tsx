@@ -28,8 +28,8 @@ function MoneyTable(props: any) {
         lg: 1400,
       }}
     >
-      {list.map(x => (
-        <Money {...x} {...settings} />
+      {list.map((x: any, idx: number) => (
+        <Money {...x} {...settings} key={`money-item-${idx}`} />
       ))}
     </GridBox>
   )
