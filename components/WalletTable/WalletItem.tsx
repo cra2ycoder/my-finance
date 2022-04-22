@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import WalletTable from './WalletTable'
 import { IWalletItemProps } from './typings'
 
 function WalletItem(props: IWalletItemProps) {
@@ -40,14 +39,14 @@ function WalletItem(props: IWalletItemProps) {
       >
         <Typography sx={{ color: '#235ad1' }}>
           {name}
-          <Typography
-            sx={{
+          <span
+            style={{
               color: '#727272',
               fontSize: '0.8rem',
             }}
           >
             {info}
-          </Typography>
+          </span>
         </Typography>
         {enableEdit === true && (
           <Button variant="outlined" sx={{ padding: 0, marginLeft: '1rem' }}>
@@ -65,7 +64,6 @@ function WalletItem(props: IWalletItemProps) {
       >
         Rs. {value || defaultValue}.00
       </Typography>
-      {/* {enableCollapse === true && <WalletTable list={groups} />} */}
     </Box>
   )
 }
