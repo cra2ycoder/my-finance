@@ -8,6 +8,7 @@ import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
 import Tab from '@mui/material/Tab'
 import MoneyCard from './MoneyCard'
+import { GridBox } from '@components/Base/Layout'
 import styles from './styles.module.scss'
 
 function MoneyBox(props: any) {
@@ -53,11 +54,15 @@ function MoneyBox(props: any) {
           There are no {title} items
         </Typography>
       )}
-      <Box display="grid" gap={2} className={styles['ms-grids-container']}>
+      <GridBox
+        className="ms-grids-container"
+        columns={{ xl: 4, lg: 3, md: 2, sm: 1 }}
+        gap="1rem"
+      >
         {filteredList.map((x: any, idx: number) => (
           <MoneyCard {...x} key={`filtered-item-${idx}`} />
         ))}
-      </Box>
+      </GridBox>
     </Box>
   )
 }
