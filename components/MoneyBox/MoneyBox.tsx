@@ -54,7 +54,7 @@ function MoneyBox(props: any) {
         </Typography>
       )}
       <Box display="grid" gap={2} className={styles['ms-grids-container']}>
-        {filteredList.map((x, idx) => (
+        {filteredList.map((x: any, idx: number) => (
           <MoneyCard {...x} key={`filtered-item-${idx}`} />
         ))}
       </Box>
@@ -75,19 +75,24 @@ function MoneyBoxTab(props: any) {
     <TabContext value={value}>
       <Box>
         <TabList
-          onChange={handleChange}
           variant="scrollable"
-          scrollButtons={false}
           aria-label="scrollable prevent tabs example"
-          sx={{ marginLeft: '-2rem', marginRight: '-2rem' }}
+          scrollButtons={false}
+          onChange={handleChange}
+          sx={{ marginLeft: '-1rem', marginRight: '-1rem' }}
         >
-          {filters.map((x, idx) => (
-            <Tab label={x.title} value={idx.toString()} />
+          {filters.map((x: any, idx: number) => (
+            <Tab
+              label={x.title}
+              value={idx.toString()}
+              key={`tab-menu-${idx}`}
+            />
           ))}
         </TabList>
       </Box>
-      {filters.map((x, idx) => (
+      {filters.map((x: Object, idx: number) => (
         <TabPanel
+          key={`tab-panel-${idx}`}
           value={idx.toString()}
           sx={{ paddingLeft: 0, paddingRight: 0 }}
         >
