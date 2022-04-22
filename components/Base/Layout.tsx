@@ -28,6 +28,7 @@ interface IGridBoxProps {
   columns: IBreakpointProps
   breakpoints?: IBreakpointProps
   sx?: any
+  gap?: number | string
   [key: string]: any
 }
 
@@ -36,6 +37,7 @@ function GridBox(props: IGridBoxProps) {
     children,
     columns = {},
     className = '',
+    gap = '',
     sx = {},
     breakpoints = {},
     ...rest
@@ -70,7 +72,7 @@ function GridBox(props: IGridBoxProps) {
       sx={{
         display: 'grid',
         justifyContent: 'space-between',
-        gap: '1.5rem',
+        gap: gap || '1.5rem',
         gridTemplateColumns: `repeat(${columns.xl || columns.lg}, 1fr)`,
         ...sx,
       }}
