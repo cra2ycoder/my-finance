@@ -28,7 +28,6 @@ function Dashboard() {
             width: '100%',
             fontSize: '3rem',
             fontWeight: 100,
-            textAlign: 'right',
             marginTop: -3,
             letterSpacing: -2,
             color: 'rgb(62, 80, 96)',
@@ -42,7 +41,6 @@ function Dashboard() {
             fontWeight: 600,
             fontSize: '3rem',
             marginTop: -3,
-            textAlign: 'right',
             letterSpacing: -3,
             color: '#1fa293',
           }}
