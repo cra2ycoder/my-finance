@@ -13,7 +13,7 @@ function PageTitle(props: IPageTitleProps) {
   const { title, desc, children } = props
 
   return (
-    <FluidFlexBox marginBottom="2rem">
+    <FluidFlexBox marginBottom="2rem" flexWrap="wrap" gap="2rem">
       <Box>
         <PageHeading text={title} />
         <PageSubHeading text={desc} />
