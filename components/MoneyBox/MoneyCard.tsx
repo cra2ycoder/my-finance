@@ -1,14 +1,12 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import DoneIcon from '@mui/icons-material/Done'
 import CloseIcon from '@mui/icons-material/Close'
 import EventRepeatIcon from '@mui/icons-material/EventRepeat'
 import DeleteIcon from '@mui/icons-material/Delete'
 import Paper from '@mui/material/Paper'
-import styles from './styles.module.scss'
 
 interface IMoneyCardProps {
   title: string
@@ -72,7 +70,6 @@ function MoneyCard(props: IMoneyCardProps) {
           marginRight: '-0.4rem',
           borderTop: '1px solid #f0f0f0',
         }}
-        // className={styles['action-buttons']}
       >
         <IconButton>
           <DeleteIcon />
