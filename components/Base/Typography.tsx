@@ -2,10 +2,7 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import { useTheme } from '@mui/material/styles'
-
-interface ITypoProps {
-  text: string
-}
+import { ITypoProps, IMenuLinkProps } from './typings'
 
 function PageHeading({ text }: ITypoProps) {
   return (
@@ -38,12 +35,6 @@ function PageSubHeading({ text }: ITypoProps) {
       {text}
     </Typography>
   )
-}
-
-interface IMenuLinkProps {
-  link: string
-  text: string
-  color?: string
 }
 
 function MenuLink(props: IMenuLinkProps) {
