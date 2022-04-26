@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { FluidFlexBox } from '@components/Base/Layout'
@@ -50,7 +49,6 @@ function WalletItem(props: IWalletItemProps) {
         )}
       </FluidFlexBox>
       <Typography
-        className="wallet-price"
         sx={{
           color: '#404040',
           fontWeight: 700,
