@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import { FluidFlexBox } from '@components/Base/Layout'
 import { IWalletItemProps } from './typings'
 
 function WalletItem(props: IWalletItemProps) {
@@ -10,50 +11,44 @@ function WalletItem(props: IWalletItemProps) {
     info = '',
     value: defaultValue = 0,
     groups = [],
-    enableCollapse = groups.length > 0,
     enableEdit = true,
   } = props
 
   const [value, setValue] = useState(0)
 
   return (
-    <Box
+    <FluidFlexBox
       sx={{
         padding: '1rem',
         borderBottom: '2px solid #f0f0f0',
         borderRadius: '10px',
         backgroundColor: 'white',
         marginBottom: '2px',
-        justifyContent: 'space-between',
-        display: 'flex',
         flexDirection: 'column',
       }}
     >
-      <Box
-        sx={{
-          display: 'flex',
-          width: '100%',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
+      <FluidFlexBox>
         <Typography sx={{ color: '#235ad1' }}>
           {name}
           <span
             style={{
               color: '#727272',
               fontSize: '0.8rem',
+              display: 'block',
             }}
           >
             {info}
           </span>
         </Typography>
         {enableEdit === true && (
-          <Button variant="outlined" sx={{ padding: 0, marginLeft: '1rem' }}>
+          <Button
+            variant="outlined"
+            sx={{ padding: 0, marginLeft: '1rem', height: '2rem' }}
+          >
             update
           </Button>
         )}
-      </Box>
+      </FluidFlexBox>
       <Typography
         className="wallet-price"
         sx={{
@@ -64,7 +59,7 @@ function WalletItem(props: IWalletItemProps) {
       >
         Rs. {value || defaultValue}.00
       </Typography>
-    </Box>
+    </FluidFlexBox>
   )
 }
 
