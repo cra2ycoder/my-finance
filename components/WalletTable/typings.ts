@@ -3,7 +3,6 @@ export interface IWalletItemProps {
   value: number | string
   info?: string
   groups?: IWalletItemProps[]
-  enableCollapse?: boolean
   enableEdit?: boolean
 }
 
