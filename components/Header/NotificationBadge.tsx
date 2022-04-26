@@ -112,6 +112,7 @@ function NotificationBadge(props) {
       >
         <Box
           sx={{
+            width: '320px',
             padding: '1rem',
             borderBottom: '1px solid rgba(145, 158, 171, 0.24)',
           }}
