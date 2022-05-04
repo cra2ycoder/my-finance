@@ -10,6 +10,16 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <CssBaseline />
+      <div
+        style={{
+          padding: '0.2rem',
+          background: 'red',
+          color: 'white',
+          textAlign: 'center',
+        }}
+      >
+        ...under construction...
+      </div>
       <Header />
       <MainFlexBox>
         <Component {...pageProps} />
