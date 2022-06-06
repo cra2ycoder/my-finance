@@ -31,6 +31,7 @@ function Dashboard() {
             marginTop: -3,
             letterSpacing: -2,
             color: 'rgb(62, 80, 96)',
+            textAlign: 'right',
           }}
         >
           You owned
@@ -43,6 +44,7 @@ function Dashboard() {
             marginTop: -3,
             letterSpacing: -3,
             color: '#1fa293',
+            textAlign: 'right',
           }}
         >
           Rs.1,32,84,912.00
