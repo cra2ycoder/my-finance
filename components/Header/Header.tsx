@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
-import Drawer from '@mui/material/Drawer'
+// import Drawer from '@mui/material/Drawer'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
@@ -124,19 +124,19 @@ function Header() {
           <Profile />
         </Box>
       </Box>
-      <Drawer
+      {/* <Drawer
         className={styles.headerDrawerParent}
         anchor="left"
         open={drawerState}
         onClose={() => {
-          setDrawerState(!drawerState)
+          // setDrawerState(!drawerState)
         }}
       >
         <MenuList
           color={theme.palette.primary.main}
           className={styles.menuListParentMobile}
         />
-      </Drawer>
+      </Drawer> */}
     </header>
   )
 }
