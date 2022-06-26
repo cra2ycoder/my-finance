@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles'
-// import darkScrollbar from '@mui/material/darkScrollbar'
 
 export default createTheme({
   typography: {
@@ -24,13 +23,6 @@ export default createTheme({
     },
     background: {
       default: '#f3f6f9',
-    },
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        // body: darkScrollbar(),
-      },
     },
   },
 })
