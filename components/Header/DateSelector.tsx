@@ -20,6 +20,25 @@ function DateSelector() {
     setAnchorEl(null)
   }
 
+  const currentDate = new Date()
+  const months = [
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC',
+  ]
+  const currentMonth = `${
+    months[currentDate.getMonth()]
+  }, ${currentDate.getFullYear()}.`
+
   return (
     <Box>
       <Button
@@ -30,7 +49,7 @@ function DateSelector() {
         onClick={handleClick}
       >
         <EventIcon />
-        <span style={{ marginLeft: '1rem' }}>April, 2022.</span>
+        <span style={{ marginLeft: '1rem' }}>{currentMonth}</span>
       </Button>
       <Menu
         id="basic-menu"
