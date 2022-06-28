@@ -1,6 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import { useTheme } from '@mui/material/styles'
+import { IGridBoxProps } from './typings'
 import styles from './layout.module.scss'
 
 function MainFlexBox({ children }: any = {}) {
@@ -15,23 +16,6 @@ function FluidFlexBox({ children, ...rest }: any = {}) {
   )
 }
 
-interface IBreakpointProps {
-  xs?: number
-  sm?: number
-  md?: number
-  lg?: number
-  xl?: number
-}
-
-interface IGridBoxProps {
-  children: React.ReactNode
-  columns: IBreakpointProps
-  breakpoints?: IBreakpointProps
-  sx?: any
-  gap?: number | string
-  [key: string]: any
-}
-
 function GridBox(props: IGridBoxProps) {
   const {
     children,
@@ -42,7 +26,6 @@ function GridBox(props: IGridBoxProps) {
     breakpoints = {},
     ...rest
   } = props
-  const { xs = 0, sm = 0, md = 0, lg = 0, xl = 0 } = columns
 
   const theme = useTheme()
 
