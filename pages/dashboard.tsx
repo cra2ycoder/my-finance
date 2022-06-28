@@ -13,11 +13,11 @@ import { pageItems } from '@model/config'
 
 function Dashboard() {
   const moneyList = [
-    { name: 'Wallet Balance', value: '54,835' },
-    { name: 'Total Properties', value: '67,25,000' },
-    { name: 'Total Investments', value: '34,67,291' },
-    { name: 'Total Golds', value: '11,08,128' },
-    { name: 'Total Loans', value: '17,92,000' },
+    { name: 'Wallet Balance', value: '54,835', link: '/wallet' },
+    { name: 'Total Properties', value: '67,25,000', link: '/debits' },
+    { name: 'Total Investments', value: '34,67,291', link: '/investments' },
+    { name: 'Total Golds', value: '11,08,128', link: '/golds' },
+    { name: 'Total Loans', value: '17,92,000', link: '/insurances' },
   ]
 
   return (
