@@ -3,9 +3,15 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import CallMadeIcon from '@mui/icons-material/CallMade'
 import Button from '@mui/material/Button'
+import { useRouter } from 'next/router'
 
 function Money(props: any) {
-  const { name, value, showButtons = true } = props
+  const router = useRouter()
+  const { name, value, showButtons = true, link = '' } = props
+
+  const navigateToLink = () => {
+    router.push(link, undefined, { shallow: true })
+  }
 
   return (
     <Box
@@ -55,7 +61,7 @@ function Money(props: any) {
         </span>
       </Typography>
       {showButtons && (
-        <Button id="show-button" variant="contained">
+        <Button id="show-button" variant="contained" onClick={navigateToLink}>
           View
         </Button>
       )}
