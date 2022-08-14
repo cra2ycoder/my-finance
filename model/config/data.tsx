@@ -3,39 +3,19 @@ const pageItems = {
     title: '',
     desc: '',
   },
-  golds: {
-    title: 'Golds',
-    desc: 'Save Gold. Save Family. Save Future.',
-  },
   dashboard: {
     title: 'Dashboard',
     desc: 'Financial Management(s). ',
   },
   wallet: {
     title: 'Wallet',
-    desc: 'Total income details. Earn, Save and Spend.',
-  },
-  debits: {
-    title: 'Monthly Expenses',
-    desc: 'Daily spends, commitments, unplanned, pending...',
-  },
-  loans: {
-    title: 'Loans',
-    desc: 'Total Loans, EMIs.',
-  },
-  investments: {
-    title: 'Investments',
-    desc: 'Total investments on Stocks, Bitcoins, Mutual funds etc.,',
-  },
-  insurances: {
-    title: 'Insurances',
-    desc: 'Total insurance coverage details will be added here.',
+    desc: 'Your total income details where you Earn, Save and Spent.',
   },
 }
 
 const walletItems = [
   {
-    name: 'In Personal Wallet',
+    name: 'Wallet Cash',
     value: 324211,
   },
   {
@@ -58,16 +38,16 @@ const walletItems = [
     ],
   },
   {
-    name: 'Returns',
+    name: 'Dividends',
     value: 324211,
     groups: [
-      { name: 'MF Returns: HDFC (4.58L)', value: 0 },
-      { name: 'MF Returns: ABSL (6.69L)', value: 0 },
-      { name: 'MF Returns: ABSL (1L)', value: 0 },
-      { name: 'MF Returns: ICICI (1.29L)', value: 0 },
-      { name: 'MF Returns: DSP (1.5L)', value: 0 },
-      { name: 'Infy Returns', value: 0 },
-      { name: 'Tax Returns', value: 0 },
+      { name: 'MF Dividends: HDFC (4.58L)', value: 0 },
+      { name: 'MF Dividends: ABSL (6.69L)', value: 0 },
+      { name: 'MF Dividends: ABSL (1L)', value: 0 },
+      { name: 'MF Dividends: ICICI (1.29L)', value: 0 },
+      { name: 'MF Dividends: DSP (1.5L)', value: 0 },
+      { name: 'Infy Dividends', value: 0 },
+      { name: 'Tax Dividends', value: 0 },
     ],
   },
   {
@@ -93,7 +73,7 @@ const walletItems = [
   {
     name: 'Other Income(s)',
     value: 324211,
-    info: 'before salary credit',
+    info: 'from family',
     groups: [{ name: 'XXXX', value: 0 }],
   },
   {
@@ -238,43 +218,4 @@ const debitList = [
   },
 ]
 
-const loanList = [
-  {
-    title: 'HDFC Bank (Kovilpalayam Plot)',
-    desc: 'monthly amount that will be shared to home',
-    type: 'plot',
-    value: 1500000,
-    on: 'every-month-10',
-  },
-  {
-    title: 'Canara Bank (Kovilpalayam Plot)',
-    desc: 'monthly amount that will be shared to home',
-    type: 'gold',
-    value: 192000,
-    on: 'every-month-10',
-  },
-  {
-    title: 'HDFC Bank (Macbook Pro)',
-    desc: 'monthly amount that will be shared to home',
-    type: 'others',
-    value: 100000,
-    on: 'every-month-10',
-  },
-]
-
-const goldList = []
-
-const investmentList = []
-
-const insuranceList = []
-
-export {
-  walletItems,
-  months,
-  pageItems,
-  debitList,
-  loanList,
-  goldList,
-  investmentList,
-  insuranceList,
-}
+export { walletItems, months, pageItems, debitList }
