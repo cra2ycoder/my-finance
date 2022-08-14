@@ -126,7 +126,7 @@ function DailyChart() {
 
 function YearlySavingsChart() {
   return (
-    <Chart title="Yearly Status, 2022">
+    <Chart title="Yearly Spent, 2022">
       <Line options={options} data={yearlySSData} />
     </Chart>
   )

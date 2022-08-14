@@ -56,4 +56,17 @@ function MenuLink(props: IMenuLinkProps) {
   )
 }
 
-export { PageHeading, PageSubHeading, MenuLink }
+function Label1x({ text }: ITypoProps) {
+  return (
+    <Typography
+      sx={{
+        fontSize: '0.875rem',
+        letterSpacing: -1,
+      }}
+    >
+      {text}
+    </Typography>
+  )
+}
+
+export { PageHeading, PageSubHeading, MenuLink, Label1x }
