@@ -3,29 +3,17 @@ import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
 // import Drawer from '@mui/material/Drawer'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
+// import Button from '@mui/material/Button'
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import MenuIcon from '@mui/icons-material/Menu'
+// import DarkModeIcon from '@mui/icons-material/DarkMode'
+// import MenuIcon from '@mui/icons-material/Menu'
 import { useTheme } from '@mui/material/styles'
 import { MenuLink } from '@components/Base/Typography'
-import NotificationBadge from './NotificationBadge'
+// import NotificationBadge from './NotificationBadge'
 import Profile from './Profile'
 import DateSelector from './DateSelector'
+import { IHeaderMenuIconProps, IMenuListProps } from './typings'
 import styles from './styles.module.scss'
-
-interface IHeaderMenuIconProps {
-  title: string
-  link?: string
-  color?: string
-  onClick?: () => void
-  iconComponent?: React.ReactNode
-}
-
-interface IMenuListProps {
-  className: string
-  color: string
-}
 
 function HeaderMenuIcon(props: IHeaderMenuIconProps) {
   const {
@@ -58,15 +46,7 @@ function HeaderMenuIcon(props: IHeaderMenuIconProps) {
 function MenuList(props: IMenuListProps) {
   const { className = '', color = '' } = props
 
-  const defaultMenuList = [
-    'Dashboard',
-    'Wallet',
-    'Debits',
-    'Investments',
-    'Golds',
-    'Loans',
-    'Insurances',
-  ]
+  const defaultMenuList = ['Dashboard', 'Wallet']
 
   return (
     <Box className={`${styles.menuListWrapper} ${className}`}>
@@ -87,7 +67,6 @@ function MenuList(props: IMenuListProps) {
 
 function Header() {
   const theme = useTheme()
-  const [drawerState, setDrawerState] = useState(false)
 
   return (
     <header className={styles.headerWrapper}>
@@ -98,15 +77,6 @@ function Header() {
         }}
       >
         <Box className={styles.headerLeftPanel}>
-          <HeaderMenuIcon
-            iconComponent={
-              <MenuIcon sx={{ fill: theme.palette.primary.main }} />
-            }
-            title=""
-            onClick={() => {
-              setDrawerState(true)
-            }}
-          />
           <AccountBalanceWalletIcon
             sx={{ fill: theme.palette.primary.main, fontSize: 35 }}
           />
@@ -117,26 +87,13 @@ function Header() {
         </Box>
         <Box className={styles.headerRightPanel}>
           <DateSelector />
-          <NotificationBadge />
-          <Button>
+          {/* <NotificationBadge /> */}
+          {/* <Button>
             <DarkModeIcon />
-          </Button>
+          </Button> */}
           <Profile />
         </Box>
       </Box>
-      {/* <Drawer
-        className={styles.headerDrawerParent}
-        anchor="left"
-        open={drawerState}
-        onClose={() => {
-          // setDrawerState(!drawerState)
-        }}
-      >
-        <MenuList
-          color={theme.palette.primary.main}
-          className={styles.menuListParentMobile}
-        />
-      </Drawer> */}
     </header>
   )
 }

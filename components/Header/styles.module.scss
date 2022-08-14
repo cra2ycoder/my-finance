@@ -30,35 +30,11 @@
   margin-right: -1rem;
 }
 
-.headerDrawerParent {
-  width: 300px;
-}
-
-.headerDrawerParent .MuiDrawer-paper {
-  width: 300px;
-}
-
 .menuListWrapper {
   display: flex;
   margin-left: 2rem;
 }
 
-@media (max-width: 1024px) {
-  // .menuListParentDesktop {
-  //   display: none;
-  // }
-  // .menuListParentMobile {
-  //   flex-direction: column;
-  // }
+.profilePanel button > div {
+  align-items: center;
 }
-
-@media (max-width: 768px) {
-  // .headerParent {
-  //   padding: 0 1rem;
-  // }
-}
-
-// @media (max-width: 1024px) {
- 
-// }
-

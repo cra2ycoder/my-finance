@@ -1,25 +1,29 @@
 import React from 'react'
 import Button from '@mui/material/Button'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
+// import Menu from '@mui/material/Menu'
+// import MenuItem from '@mui/material/MenuItem'
 import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { deepPurple } from '@mui/material/colors'
-import menuPageProps from './props'
+import { Label1x } from '@components/Base/Typography'
+// import menuPageProps from './props'
+import styles from './styles.module.scss'
 
 function Profile() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
   }
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
+
+  // const handleClose = () => {
+  //   setAnchorEl(null)
+  // }
 
   return (
-    <div>
+    <div className={styles.profilePanel}>
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -28,12 +32,13 @@ function Profile() {
         onClick={handleClick}
       >
         <Stack direction="row" spacing={2}>
+          <Label1x text="Hello, Mohaa" />
           <Avatar sx={{ backgroundColor: deepPurple[500] }}>
             <AccountCircleIcon />
           </Avatar>
         </Stack>
       </Button>
-      <Menu
+      {/* <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -43,7 +48,7 @@ function Profile() {
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
+      </Menu> */}
     </div>
   )
 }
