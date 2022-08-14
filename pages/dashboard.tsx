@@ -7,19 +7,11 @@ import {
   YearlySavingsChart,
   MonthlyIncomeChart,
 } from '@components/Charts'
-import { MoneyTable } from '@components/MoneyBox'
+// import { MoneyTable } from '@components/MoneyBox'
 import { GridBox } from '@components/Base/Layout'
 import { pageItems } from '@model/config'
 
 function Dashboard() {
-  const moneyList = [
-    { name: 'Wallet Balance', value: '54,835', link: '/wallet' },
-    { name: 'Total Properties', value: '67,25,000', link: '/debits' },
-    { name: 'Total Investments', value: '34,67,291', link: '/investments' },
-    { name: 'Total Golds', value: '11,08,128', link: '/golds' },
-    { name: 'Total Loans', value: '17,92,000', link: '/insurances' },
-  ]
-
   return (
     <Box>
       <PageTitle {...pageItems.dashboard}>
@@ -34,7 +26,7 @@ function Dashboard() {
             textAlign: 'right',
           }}
         >
-          You owned
+          Current Balance
         </Typography>
         <Typography
           sx={{
@@ -47,10 +39,10 @@ function Dashboard() {
             textAlign: 'right',
           }}
         >
-          Rs.1,32,84,912.00
+          Rs.94,012.00
         </Typography>
       </PageTitle>
-      <MoneyTable list={moneyList} />
+      {/* <MoneyTable list={moneyList} /> */}
       <GridBox
         className="dashboard-graphs-wrapper"
         columns={{ lg: 2, md: 1, sm: 1 }}
