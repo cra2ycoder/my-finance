@@ -46,7 +46,7 @@ function HeaderMenuIcon(props: IHeaderMenuIconProps) {
 function MenuList(props: IMenuListProps) {
   const { className = '', color = '' } = props
 
-  const defaultMenuList = ['Dashboard', 'Wallet']
+  const defaultMenuList = ['Dashboard', 'Wallet', 'Debits']
 
   return (
     <Box className={`${styles.menuListWrapper} ${className}`}>

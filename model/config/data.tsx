@@ -11,6 +11,10 @@ const pageItems = {
     title: 'Wallet',
     desc: 'Your total income details where you Earn, Save and Spent.',
   },
+  debits: {
+    title: 'Monthly Expenses',
+    desc: 'Daily spends, commitments, unplanned, pending...',
+  },
 }
 
 const walletItems = [

@@ -60,6 +60,7 @@ function Label1x({ text }: ITypoProps) {
   return (
     <Typography
       sx={{
+        fontFamily: 'inherit',
         fontSize: '0.875rem',
         letterSpacing: -1,
       }}
