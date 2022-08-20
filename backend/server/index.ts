@@ -19,7 +19,7 @@ const API_SERVER_PORT: number | string = process.env.BACKEND_NODE_PORT || 4000
  * @note
  * connect mongoDB
  */
-connectMongoDB()
+// connectMongoDB()
 
 /**
  * @note
@@ -47,7 +47,7 @@ apiServer.use('/api/debits', require('../endpoints/debits'))
  * @note
  * start db server
  */
-apiServer.listen(() => {
+apiServer.listen(API_SERVER_PORT, () => {
   console.log(
     `API server is running at  >>> ` +
       colors.underline.blue(`http://localhost:${API_SERVER_PORT}`)
