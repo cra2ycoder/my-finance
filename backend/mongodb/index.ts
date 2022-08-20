@@ -24,7 +24,7 @@ if (!cached) {
 }
 
 async function connectMongoDB() {
-  if (cached) {
+  if (cached && cached.connection) {
     return cached.connection
   }
 
