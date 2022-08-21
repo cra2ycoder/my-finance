@@ -42,6 +42,7 @@ apiServer.use(express.urlencoded({ extended: false }))
  */
 apiServer.use('/api/wallet', require('../endpoints/wallet'))
 apiServer.use('/api/debits', require('../endpoints/debits'))
+apiServer.use('/api/income', require('../endpoints/income'))
 
 /**
  * @note
