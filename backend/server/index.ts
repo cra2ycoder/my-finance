@@ -19,7 +19,7 @@ const API_SERVER_PORT: number | string = process.env.BACKEND_NODE_PORT || 4000
  * @note
  * connect mongoDB
  */
-// connectMongoDB()
+connectMongoDB()
 
 /**
  * @note
