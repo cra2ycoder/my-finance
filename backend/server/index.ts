@@ -17,19 +17,19 @@ const API_SERVER_PORT: number | string = process.env.BACKEND_NODE_PORT || 4000
 
 /**
  * @note
- * connect mongoDB
+ * connecting to mongoDB
  */
 connectMongoDB()
 
 /**
  * @note
- * create server
+ * creating server
  */
 const apiServer = express()
 
 /**
  * @note
- * add middle wars
+ * adding middlewars
  * - json parser
  * - url encoded parser at the POST BODY (x-www-form-urlencoded)
  */
@@ -46,7 +46,7 @@ apiServer.use('/api/income', require('../endpoints/income'))
 
 /**
  * @note
- * start db server
+ * starting backend server
  */
 apiServer.listen(API_SERVER_PORT, () => {
   console.log(
