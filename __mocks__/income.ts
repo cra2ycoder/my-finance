@@ -20,8 +20,8 @@ const incomeModel: TIncomeModel = {
         accountType: 'savings',
         currentBalance: 1021221,
         previousBalance: {
-          balance: 12000,
-          date: '28/09/2022',
+          total: 12000,
+          on: '28/09/2022',
         },
         transactions: [
           {
@@ -70,8 +70,8 @@ const incomeModel: TIncomeModel = {
         accountType: 'mutual fund',
         currentBalance: 355000,
         previousBalance: {
-          balance: 352000,
-          date: '28/09/2022',
+          total: 352000,
+          on: '28/09/2022',
         },
         investedOn: '',
         brokerage: {

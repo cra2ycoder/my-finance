@@ -6,11 +6,6 @@ export type TGrandBalance = {
   crypto: number
 }
 
-export type TPreviousBalanceModel = {
-  balance: number
-  date: string
-}
-
 export type TTransactionAsType =
   | 'salary'
   | 'redemption'
@@ -41,7 +36,7 @@ export type TBaseAccountModel = {
   currency: string
   currentBalance: number
   accountType?: string
-  previousBalance?: TPreviousBalanceModel
+  previousBalance?: TBalanceModel
   transactions?: TBaseTransactionModel[]
 }
 
@@ -78,12 +73,12 @@ export type TAccountsModel = {
   crypto?: TCryptoBaseAccountModel[]
 }
 
-export type TWalletModel = {
+export type TBalanceModel = {
   total: number
   on: string
 }
 
 export type TIncomeModel = {
-  wallet: TWalletModel
+  wallet: TBalanceModel
   accounts: TAccountsModel
 }
