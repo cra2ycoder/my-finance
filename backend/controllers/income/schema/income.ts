@@ -84,6 +84,3 @@ export const IncomeSchema = new Schema(
   },
   { strict: false }
 )
-
-export const IncomeModel =
-  mongoose.models.Income || mongoose.model('Income', IncomeSchema)
