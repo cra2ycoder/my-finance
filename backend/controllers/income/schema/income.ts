@@ -77,10 +77,13 @@ export const AccountsSchema = new Schema(
   { _id: false }
 )
 
-export const IncomeSchema = new Schema({
-  wallet: BaseBalanceSchema,
-  accounts: AccountsSchema,
-})
+export const IncomeSchema = new Schema(
+  {
+    wallet: BaseBalanceSchema,
+    accounts: AccountsSchema,
+  },
+  { strict: false }
+)
 
 export const IncomeModel =
   mongoose.models.Income || mongoose.model('Income', IncomeSchema)
