@@ -36,6 +36,7 @@ async function connectMongoDB() {
 
     const options = {
       bufferCommands: false,
+      dbName: 'my-finance',
     }
 
     mge.promise = mongoose
