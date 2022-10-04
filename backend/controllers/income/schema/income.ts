@@ -12,6 +12,7 @@ export const BaseBalanceSchema = new Schema(
 
 export const GrandBalanceSchema = new Schema(
   {
+    wallet: Number,
     banks: Number,
     upi: Number,
     mutualFunds: Number,
@@ -68,6 +69,7 @@ export const BaseAccountSchema = new Schema(
 export const AccountsSchema = new Schema(
   {
     grandBalance: GrandBalanceSchema,
+    wallet: BaseAccountSchema,
     banks: [BaseAccountSchema],
     upi: [BaseAccountSchema],
     mutualFunds: [BaseAccountSchema],
@@ -79,7 +81,6 @@ export const AccountsSchema = new Schema(
 
 export const IncomeSchema = new Schema(
   {
-    wallet: BaseBalanceSchema,
     accounts: AccountsSchema,
   },
   { strict: false }
