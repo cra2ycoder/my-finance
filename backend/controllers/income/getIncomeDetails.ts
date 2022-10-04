@@ -5,11 +5,8 @@ import mongoose from 'mongoose'
 
 export const getIncomeDetails = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
-    res.status(200)
-
     const IncomeModel = mongoose.models.Income
-
-    const data = await IncomeModel.find()
-    res.json(data)
+    const data = await IncomeModel.find({})
+    res.status(200).json(data)
   }
 )
